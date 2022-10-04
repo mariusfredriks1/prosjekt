@@ -3,8 +3,8 @@
   <head>
     <meta charset="utf-8" />
     <title>Oppgave 3</title>
-    <link rel="stylesheet" href="stil.css" />
-    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="../css/type_test5-7.css" />
+    <script src="../js/type_test5-7.js" defer></script>
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -31,14 +31,9 @@
     </nav>
     <div id="timer" class="text-center">0</div>
     <div class="skriveTest">
-      <div class="tekstBoks">
-        The standard chunk of Lorem Ipsum used since the 1500s is reproduced
-        below for those interested. Sections 1.10.32 and 1.10.33 from "de
-        Finibus Bonorum et Malorum" by Cicero are also reproduced in their exact
-        original form, accompanied by English versions from the 1914 translation
-        by H. Rackham
-      </div>
-      <textarea id="inputFelt" autofocus></textarea>
+      <div id="sitat" class="tekstBoks"></div>
+      <textarea oninput="sjekkSvar()" id="inputFelt" autofocus></textarea>
     </div>
+    <button id="nesteSitat" onclick="fyllSitat()" class="text-center">Neste</button>
   </body>
 </html>
