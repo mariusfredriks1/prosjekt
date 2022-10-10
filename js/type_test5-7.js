@@ -28,7 +28,6 @@ sitat.split('').forEach((bokstav) => {
   bokstavSpan.innerText(bokstav);
 });
 
-
 //Funksjon som fyller inn sitatet
 function fyllSitat() {
   document.getElementById('sitat').innerText = `${sitatRandom}`;
@@ -43,6 +42,7 @@ function startTimer() {
   let nedtelling = setInterval(function () {
     tidsgrense--;
     document.getElementById('timer').textContent = tidsgrense;
+    
     if (tidsgrense === 0) clearInterval(nedtelling);
     timer = window.setTimeout(() => {
       alert(`60 sekunder har gått, poengsummen din ble ${poeng}`);
@@ -69,7 +69,7 @@ function sjekkSvar() {
     }
   }
 }
-//hvordan generere nytt sitat?
+//hvordan generere nytt tilfeldig sitat?
 function nyttSitat() {
   inputFelt.value = null;
   document.getElementById('sitat').innerText = `${tilfeldigSitat}`;
