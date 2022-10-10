@@ -51,6 +51,10 @@ function startTimer() {
   }, 1000);
 }
 
+function startOnce() {
+  if (!saidHello) sayHello();
+}
+
 let input = document.getElementById('inputFelt');
 let poeng = 0;
 let poengTekst = document.getElementById('poeng');
@@ -69,6 +73,7 @@ function sjekkSvar() {
     }
   }
 }
+
 //hvordan generere nytt tilfeldig sitat?
 function nyttSitat() {
   inputFelt.value = null;
