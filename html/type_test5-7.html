@@ -13,7 +13,7 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
 
-  <body>
+  <body onload="fyllSitat()">
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -29,11 +29,17 @@
         </ul>
       </div>
     </nav>
-    <div id="timer" class="text-center">0</div>
+    <div id="timer" class="text-center">60</div>
+    <div class="text-center poeng">Poeng: 0</div>
+    <div class="text-center poeng"></div>
     <div class="skriveTest">
       <div id="sitat" class="tekstBoks"></div>
-      <textarea oninput="sjekkSvar()" id="inputFelt" autofocus></textarea>
+      <textarea
+        oninput="sjekkSvar();startTimer()"
+        ;
+        id="inputFelt"
+        autofocus
+      ></textarea>
     </div>
-    <button id="nesteSitat" onclick="fyllSitat()" class="text-center">Neste</button>
   </body>
 </html>
