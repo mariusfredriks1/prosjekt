@@ -1,5 +1,3 @@
-//Definerer tidsgrense
-let tidsgrense = 60;
 //Definerer quotes som skal brukes
 let sitat_array = [
   'Gresset er grønnere på andre siden av gjerdet',
@@ -18,29 +16,61 @@ let sitat_array = [
   'Noen ganger er alt man tenker noe som ikke kan hjelpe i det hele tatt.',
   'Utsett ikke til i morgen det du kan gjøre i overmorgen.',
 ];
-let input = document.getElementById('inputFelt');
 //Lager variabel som tilfeldig velger en quote
-let tilfeldigSitat =
-  sitat_array[Math.floor(Math.random() * sitat_array.length)];
 
-//Funksjon som fyller inn quoten
+let sitatRandom = sitat_array[Math.floor(Math.random() * sitat_array.length)];
+//Prøver å  splitte sitatet samt legge resultattet inn i et span, slik at jeg kan sjekke
+// hver bokstav induviduelt opp mot arrayen som inneholder bokstavene for å passe på
+//at det skrives inn riktig. Ved riktig bokstav skal boksataven bli grønn, ved feil
+//skal bokstaven(e) som er skrevet feil bli røde, samt understreket.
+sitat.split('').forEach((bokstav) => {
+  let bokstavSpan = document.createElement('span');
+  bokstavSpan.innerText(bokstav);
+});
+
+//Funksjon som fyller inn sitatet
 function fyllSitat() {
-  document.getElementById('sitat').innerText = `${tilfeldigSitat}`;
-  inputFelt.value = null;
+  document.getElementById('sitat').innerText = `${sitatRandom}`;
+  console.log(sitatRandom);
+}
+//Kjører funksjonen fyllSitat
+
+function startTimer() {
+  //starte nedtelling
+  //Definerer tidsgrense
+  let tidsgrense = 60;
+  let nedtelling = setInterval(function () {
+    tidsgrense--;
+    document.getElementById('timer').textContent = tidsgrense;
+    
+    if (tidsgrense === 0) clearInterval(nedtelling);
+    timer = window.setTimeout(() => {
+      alert(`60 sekunder har gått, poengsummen din ble ${poeng}`);
+      window.location.reload();
+    }, 60000);
+  }, 1000);
 }
 
-//Kjører funksjonen fyllSitat
-fyllSitat();
-
-let svar = document.getElementById('inputFelt').value;
-let feil = 0;
+let input = document.getElementById('inputFelt');
+let poeng = 0;
+let poengTekst = document.getElementById('poeng');
+poengTekst.innerText = poeng;
 
 function sjekkSvar() {
-  if (svar !== tilfeldigSitat) {
-    feil++;
-    //Farge bokstaver som er skrevet feil røde
-  } else if (d) {
-  } else {
-    //Farge bokstaver som er riktige grønne
+  //Sjekke om input er riktig
+  for (let i = 0; i <= Array.length; i++) {
+    if (inputFelt !== sitat) {
+      sitat.classList.add('feil');
+    } else if (inputFelt == sitat) {
+      sitat.classList.add('riktig');
+    } else {
+      poeng++;
+      nyttSitat();
+    }
   }
+}
+//hvordan generere nytt tilfeldig sitat?
+function nyttSitat() {
+  inputFelt.value = null;
+  document.getElementById('sitat').innerText = `${tilfeldigSitat}`;
 }
