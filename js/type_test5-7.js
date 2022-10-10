@@ -23,7 +23,7 @@ let sitatRandom = sitat_array[Math.floor(Math.random() * sitat_array.length)];
 // hver bokstav induviduelt opp mot arrayen som inneholder bokstavene for å passe på
 //at det skrives inn riktig. Ved riktig bokstav skal boksataven bli grønn, ved feil
 //skal bokstaven(e) som er skrevet feil bli røde, samt understreket.
-sitat.split('').forEach((bokstav) => {
+sitatRandom.split('').forEach((bokstav) => {
   let bokstavSpan = document.createElement('span');
   bokstavSpan.innerText(bokstav);
 });
@@ -42,7 +42,7 @@ function startTimer() {
   let nedtelling = setInterval(function () {
     tidsgrense--;
     document.getElementById('timer').textContent = tidsgrense;
-    
+
     if (tidsgrense === 0) clearInterval(nedtelling);
     timer = window.setTimeout(() => {
       alert(`60 sekunder har gått, poengsummen din ble ${poeng}`);
@@ -63,13 +63,13 @@ poengTekst.innerText = poeng;
 function sjekkSvar() {
   //Sjekke om input er riktig
   for (let i = 0; i <= Array.length; i++) {
-    if (inputFelt !== sitat) {
-      sitat.classList.add('feil');
-    } else if (inputFelt == sitat) {
-      sitat.classList.add('riktig');
-    } else {
+    if (inputFelt === sitatRandom) {
       poeng++;
       nyttSitat();
+    } else if (inputFelt == sitatRandom) {
+      sitatRandom.classList.add('riktig');
+    } else {
+      sitatRandom.classList.add('feil');
     }
   }
 }
