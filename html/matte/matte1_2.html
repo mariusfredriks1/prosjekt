@@ -3,14 +3,16 @@
   <head>
     <meta charset="utf-8" />
     <title>Mattegøy for 1. og 2. trinn</title>
-    <script src="/js/matte/matte1_2.js"></script>
+    
     <link
+      rel="stylesheet" src="/js/matte/matte1_2.js"
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-  </head>
+    
+</head>
 <body>
   <nav class="navbar navbar-inverse">
     <div class="container-fluid">
@@ -29,14 +31,16 @@
   </nav>
 
     <!--Arrays som skal legges sammen, og man får tre alternativer der en skal være riktig-->
-    
-    <div id="frukt1" onload="randomfrukt()" alt="frukt"> En</div>
-    
-    <div id="frukt2" onload="randomfrukt()"> To </div>
-    
+    <div id="oppgave">
+     <div id="frukt1" onload="randomfrukt()" alt="frukt"> En</div>
+      <div id="frukt2" onload="randomfrukt()"> To </div>
+    </div>
 
 
-    <div>
+    <div id="svaralt">
+      <div id="alt1" onclick="riktig()"></div>
+      <div id="alt2" onclick="feil()"></div>
+      <div id="alt3"></div>
       <!--Grid med svaralt-->
     </div>
 
