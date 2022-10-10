@@ -6,6 +6,8 @@ let tall = [
 {frukt: "", verdi: 4}
 ];
 
+//kommentar
+
 // funksjon som tar random array
 const randomTall = tall[Math.floor(Math.random() * math.length)];
 
