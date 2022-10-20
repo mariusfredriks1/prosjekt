@@ -26,6 +26,9 @@ const hexArray = [
 ];
 let tilfeldigFarge = hexArray[Math.floor(Math.random() * hexArray.length)];
 
+function bakgrunnOnload() {
+  fargeDiv.style.text = red;
+}
 function velgTilfeldigFarge() {
     fargeDiv.style.backgroundColor = tilfeldigFarge;
 }

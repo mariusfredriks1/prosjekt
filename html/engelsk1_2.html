@@ -2,7 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Mattegøy for 1. og 2. trinn</title>
+    <title>Engelsk for 1. og 2. trinn</title>
     <link rel="stylesheet" href="../css/engelsk1_2.css" />
     <script src="../js/engelsk/engelsk1_2.js" defer></script>
     <link
@@ -12,7 +12,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
   </head>
-  <body onload="velgTilfeldigFarge()">
+  <body onload="bakgrunnOnload()">
     <nav class="navbar navbar-inverse">
       <div class="container-fluid">
         <div class="navbar-header">
@@ -28,13 +28,22 @@
         </ul>
       </div>
     </nav>
-    <h2 class="text-center">engelsk</h2>
-    <div id="fargeDiv" class="d-flex justify-content-center"></div>
+    <div class="text-center">
+      <h2>engelsk</h2>
+      <button
+        onclick="velgTilfeldigFarge()"
+        class="btn btn-secondary btn-rounded"
+        id="startKnapp"
+      >
+        Start
+      </button>
+    </div>
+    <div id="fargeDiv"></div>
     <div id="knappDiv" class="text-center">
-      <button class="knapper">Test</button>
-      <button class="knapper">Test</button>
-      <button class="knapper">Test</button>
-      <button class="knapper">Test</button>
+      <button class="btn btn-secondary btn-rounded" id="knapp1">Test</button>
+      <button class="btn btn-secondary btn-rounded" id="knapp2">Test</button>
+      <button class="btn btn-secondary btn-rounded" id="knapp3">Test</button>
+      <button class="btn btn-secondary btn-rounded" id="knapp4">Test</button>
     </div>
   </body>
 </html>

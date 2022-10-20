@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Oppgave 3</title>
+    <link rel="stylesheet" href="stilark.css" />
+    <link rel="stylesheet" href="navbar.css" />
+    <script src="../typingTestPatrick/patrick.js" defer></script>
+  </head>
+
+  <body onload="fyllSitat()">
+    <div class="topnav" id="myTopnav">
+      <a href="hjem.html">Hjem</a>
+      <a href="ofteStilteSpørsmål.html">Ofte stilte spørsmål</a>
+      <a href="omTeamet.html">Om teamet</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="tid_poeng">
+      <div id="timer">60</div>
+      <div id="poeng">Poeng:</div>
+      <div id="poengTekst"></div>
+    </div>
+    <div class="skriveTest">
+      <div id="sitat" class="sitat"></div>
+      <textarea
+        oninput="sjekkSvar();startTimer()"
+        ;
+        id="inputFelt"
+        autofocus
+      ></textarea>
+    </div>
+    <script>
+      function myFunction() {
+        var x = document.getElementById('myTopnav');
+        if (x.className === 'topnav') {
+          x.className += ' responsive';
+        } else {
+          x.className = 'topnav';
+        }
+      }
+
+      //Definerer quotes som skal brukes
+      let sitat_array = [
+        'gresset er grønnere på andre siden av gjerdet',
+        'å være sliten og nedfor er ikke et tegn på svakhet mest sannsynlig har du vært sterk for lenge',
+        'jeg skulle ikke spise den, jeg skulle bare smake på den',
+        'nøtter er ikke noe for en hel rev',
+        'man skal ikke plage andre man skal være grei og snill og for øvrig kan man gjøre hva man vil',
+        'her kommer klatremus lillemann, en mus som synge og spille kan',
+        'det har jeg aldri gjort før så det klarer jeg helt sikkert',
+        'det var hyggelig at du kom men enda hyggeligere at du går',
+        'det er typisk norsk å være god',
+        'enten så går det fint eller så går det over',
+        'det er bedre å være stille og bli tenkt om som en tulling enn å snakke og fjerne all tvil',
+        'kunnskap er å vite at en tomat er en frukt visdom er å ikke bruke den i en fruktsalat',
+        'noen ganger er alt man tenker noe som ikke kan hjelpe i det hele tatt',
+        'utsett ikke til i morgen det du kan gjøre i overmorgen',
+        'alt for norge',
+        'alle veier fører til rom',
+        'dans på bordet',
+        'piker vin og sang',
+        'hastverk er lastverk',
+        'der det er hjerterom er det husrom',
+        'like barn leker best',
+        'vi kan se italia bror',
+        'det er bedre å drukne sine sorger, enn å lære dem og svømme',
+        'det er i motbakke det går oppover',
+        'det er ikke gull i alt som glitrer',
+        'eplet faller ikke langt fra stammen',
+        'gå ikke over bekken etter vann',
+        'kast ikke sten når du sitter i glasshus',
+        'vennskap ender ofte med kjærlighet, men kjærlighet ender aldri med vennskap'
+      ];
+    </script>
+  </body>
+</html>

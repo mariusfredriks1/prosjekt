@@ -24,8 +24,9 @@ let sitatRandom = sitat_array[Math.floor(Math.random() * sitat_array.length)];
 //at det skrives inn riktig. Ved riktig bokstav skal boksataven bli grønn, ved feil
 //skal bokstaven(e) som er skrevet feil bli røde, samt understreket.
 sitatRandom.split('').forEach((bokstav) => {
-  let bokstavSpan = document.createElement('span');
-  bokstavSpan.innerText(bokstav);
+  const bokstavSpan = document.createElement('span');
+  bokstavSpan.innerText = bokstav;
+  sitat.append(bokstavSpan);
 });
 
 //Funksjon som fyller inn sitatet
@@ -51,14 +52,10 @@ function startTimer() {
   }, 1000);
 }
 
-function startOnce() {
-  if (!saidHello) sayHello();
-}
-
 let input = document.getElementById('inputFelt');
 let poeng = 0;
 let poengTekst = document.getElementById('poeng');
-poengTekst.innerText = poeng;
+poengTekst.innerHtml = poeng;
 
 function sjekkSvar() {
   //Sjekke om input er riktig
@@ -68,8 +65,10 @@ function sjekkSvar() {
       nyttSitat();
     } else if (inputFelt == sitatRandom) {
       sitatRandom.classList.add('riktig');
+      sitatRandom.classList.remove('feil');
     } else {
       sitatRandom.classList.add('feil');
+      sitatRandom.classList.remove('riktig');
     }
   }
 }
