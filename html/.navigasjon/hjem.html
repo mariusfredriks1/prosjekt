@@ -1,46 +1,63 @@
-<html>
-  <head>
-    <meta charset="utf-8">
-    <title>Just learn it</title>
+<!DOCTYPE html>
+<html lang="en">
+<head>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-      #nav {
-        color: aqua;
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-        /*prøvde å style int for å styre den selv, nå styres den etter css i CDn*/
+  <link rel = "stylesheet" href = "./HjemStilark.css">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+
+  <title>Hjem</title>
+</head>
+<body>
+  
+  <div class="topnav" id="myTopnav">
+    <a href="hjem.html">Hjem</a>
+    <a href="ofteStilteSpørsmål.html">Ofte stilte spørsmål</a>
+    <a href="omTeamet.html">Om teamet</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+  
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById("myTopnav");
+      if (x.className === "topnav") {
+        x.className += " responsive";
+      } else {
+        x.className = "topnav";
       }
-    </style>
-  </head>
+    }
+    </script>
 
-  <body>
-    <!--Navbar i full scale-->
-    <nav class="navbar navbar-inverse">
-      <div class="container-fluid">
-        <div class="navbar-header">
-          <a class="navbar-brand" href="#"> Hjem</a>
-          <!--href til css som ligger i bootstrap mappen i cdn-->
-          <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
-            <span class="icon-bar">Ofte stilte spørsmål</span>
-            <span class="icon-bar">Om oss</span>
-            <span class="icon-bar">Kontakt oss</span>
-          </button>
-          
-        </div>
 
-        <!--Komprimert navbar-->
-        <div class="collapse navbar-collapse" id="myNavbar">
-          <ul class="nav navbar-nav">
-            <li class="active"><a href="#">Hjem</a></li>
-            <li class="dropdown"><a href="#">Ofte stilte spørsmål</a> </li>
-            <li><a href="#">Om oss</a></li>
-            <li><a href="#">Kontakt oss</a></li>
-          </ul>
-        </div>
-      </div>
-    </nav>
+<div class="w3-row-padding">
 
-    </body>
+    <div class="container" onclick="location.href='1_2.html'">
+      <script src = "button.js"></script>
+      <h4 class="title">1.-2. klasse</h4>
+      <img src="shun.jpg" alt="forsteAndre" style="width:100%">
+    </div>
+
+    <div class="container" onclick="location.href='3_4.html'">
+      <h4 class="title">3.-4. klasse</h4>
+      <img src="ATklasse.png" alt="tredjeFjerde" style="width:100%">
+    </div>
+
+
+    <div class="container" onclick="location.href='5_7.html'">
+      <script src = "button.js"></script>
+      <h4 class="title">5.-7. klasse</h4>
+      <img src="image24.png" alt="femteSjuende" style="width:100%">
+    </div>
+  </div>
+
+
+
+</body>
+</html>
