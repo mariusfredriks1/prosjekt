@@ -5,6 +5,7 @@
     <title>Mattegøy 1-2</title>
     <link rel="stylesheet" href="/css/matte/matte1_2.css ">
     <script src="/js/matte/matte12.js" defer></script>
+    <link rel="stylesheet" href="/css/navbar.css" />
     <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -16,21 +17,25 @@
 </head>
 <body onload=tekst()>
 
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Gruppe 10 prosjekt</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Hjem</a></li>
-        <li><a href="#">Side ?</a></li>
-        <li><a href="#">Side ?</a></li>
-        <li><a href="#">Side ?</a></li>
-        <li><a href="#">Hjelp</a></li>
-        <li><a href="#">Om oss</a></li>
-      </ul>
-    </div>
-  </nav>
+  <div class="topnav" id="myTopnav">
+    <a href="/html/navigasjon/hjem.html">Hjem</a>
+    <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+    <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
+
+  <script>
+    function myFunction() {
+      var x = document.getElementById('myTopnav');
+      if (x.className === 'topnav') {
+        x.className += ' responsive';
+      } else {
+        x.className = 'topnav';
+      }
+    }
+  </script>
     
     <!--Arrays som skal legges sammen, og man får tre alternativer der en skal være riktig
     to divs som er 40% hver med pluss tegn i mellom-->
@@ -58,34 +63,15 @@
      </div>
 
      <!-- The Modal -->
-    <div id="myModal" class="modal">
+    <div id="modal" class="modal">
 
     <!-- Modal content -->
     <div class="modal-content">
       <span class="close">&times;</span>
-      <p>Some text in the Modal..</p>
+      <p>Helt riktig! Trykk "X" for å gå videre</p>
     </div>
 
-</div>
-   
-     
-     
-
-
-    <!-- To arrays som tar random index i begge (samsvarende) og legger sammen. 
-      Random for hver load
-    
-      <h1>Oppgave 3 - pris på matvarer</h1>
-    Skriv inn priser for varene <input id="pris" type="number">
-    <button id="pris" onclick="mirror(innpris())">Legg til pris </button>
-    <button id="tall" onclick="sumArray(pris)">Trykk for oversikt</button> 
-    <p id="utdata"></p>
-     -->
-
-    <br>
-   
-    <div id="ut"></div>
-
+  </div>
 
 </body>
 </html>

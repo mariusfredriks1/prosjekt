@@ -13,6 +13,8 @@ sum = 0
         random()
     }  */
 
+  // let feil =
+
 
 //verdi til bildene som lastes inn
 
@@ -21,9 +23,16 @@ let randomTall1 = verdier[Math.floor(Math.random() * verdier.length)];
 let randomTall2 = verdier[Math.floor(Math.random() * verdier.length)];
 let feilsvar = randomTall1*2;
 
-let img = []
+/* // bilder inn i array
+img = Array(2)
+img[0] = new Image
+img[0].src="./img/matte1_2/tobananer.png"
+img[1] = new Image
+img[1].src='/img/matte1_2/matte1.JPG'
 
-// img1.src = "/img/matte1_2/3bananer.jpg"
+let randombilde = img[Math.floor(math.random() * img.length)]; */
+
+
 let alternativ1 = document.getElementById("flex-childfrukt1")
 let alternativ2 = document.getElementById("flex-childfrukt2")
 
@@ -45,15 +54,13 @@ function tekst() {
 
 
 // Get the modal
-var modal = document.getElementById("myModal");
+var modal = document.getElementById("modal");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
 riktig.onclick = function() {
   modal.style.display = "block";
-    setTimeout(() => {
-        
-    }, 3000);
+    
   }
     //random(). window.reload
 
@@ -61,6 +68,7 @@ riktig.onclick = function() {
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {
   modal.style.display = "none";
+  location.reload()
 }
 
 window.onclick = function(event) {

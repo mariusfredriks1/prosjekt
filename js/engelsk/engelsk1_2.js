@@ -11,6 +11,7 @@ const fargeArray = [
   'sort',
   'grå',
 ];
+
 const hexArray = [
   '#6495ED',
   '#FF0000',
@@ -24,12 +25,14 @@ const hexArray = [
   '#000000',
   '##808080',
 ];
+
 let tilfeldigFarge = hexArray[Math.floor(Math.random() * hexArray.length)];
 
 function bakgrunnOnload() {
-  fargeDiv.style.text = red;
+  colorBoard.style.text = red;
 }
+
 function velgTilfeldigFarge() {
-    fargeDiv.style.backgroundColor = tilfeldigFarge;
+  colorBoard.style.backgroundColor = tilfeldigFarge;
 }
 //indexOf?
