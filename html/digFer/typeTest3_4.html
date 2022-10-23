@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Typetest 3-4 klasse</title>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/digFer/typetest.css" />
+    <script src="/js/digFer/typetest.js" defer></script>
+  </head>
+
+  <body onload="fyllSitat()">
+    <div class="topnav" id="myTopnav">
+      <a href="/html/navigasjon/hjem.html">Hjem</a>
+      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+    <div class="tid_poeng">
+      <div id="timer">60</div>
+      <div id="poeng">Poeng:</div>
+      <div id="poengTekst"></div>
+    </div>
+    <div class="skriveTest">
+      <div id="sitatet" class="sitatet"></div>
+      <textarea
+        oninput="sjekkSvar();startTimer()"
+        ;
+        id="textArea"
+        autofocus
+      ></textarea>
+    </div>
+    <script>
+      function myFunction() {
+        var x = document.getElementById('myTopnav');
+        if (x.className === 'topnav') {
+          x.className += ' responsive';
+        } else {
+          x.className = 'topnav';
+        }
+      }
+
+      //Definerer quotes som skal brukes
+
+      let sitat_array = [
+        'admiral',
+        'aften',
+        'anorakk',
+        'aroma',
+        'asparges',
+        'avl',
+        'ball',
+        'bamse',
+        'banan',
+        'bark',
+        'betennelse',
+        'bølge',
+        'daddel',
+        'dam',
+        'dåse',
+        'diplom',
+        'drage',
+        'diplomat',
+        'egg',
+        'eksem',
+        'emalje',
+        'etui',
+        'eske',
+        'etappe',
+        'fe',
+        'feber',
+        'finger',
+        'finne',
+        'frityr',
+        'fødsel',
+        'gane',
+        'gebiss',
+        'gelender',
+        'genser',
+        'gluten',
+        'gymnastikk',
+        'hake',
+        'ham',
+        'hanske',
+        'hår',
+        'hær',
+        'humle',
+        'idiot',
+        'iglo',
+        'ingeniør',
+        'ingefær',
+        'innsamling',
+        'is',
+        'jakke',
+        'jord',
+        'jøde',
+        'jus',
+        'juice',
+        'januar',
+        'klokke',
+        'kakkerlakk',
+        'kammer',
+        'kamskjell',
+        'kart',
+        'kost',
+        'lege',
+        'lekkasje',
+        'lapp',
+        'lår',
+        'løve',
+        'lur',
+        'mat',
+        'marg',
+        'maskin',
+        'moms',
+        'muslim',
+        'massasje',
+        'nei',
+        'nekte',
+        'nisse',
+        'nebb',
+        'nølle',
+        'nøle',
+        'oberst',
+        'onkel',
+        'orgel',
+        'orm',
+        'omkrets',
+        'omhu',
+        'pasta',
+        'perle',
+        'planke',
+        'prest',
+        'pumpe',
+        'pukkel',
+        'rabarbra',
+        'radar',
+        'ramme',
+        'rad',
+        'rektor',
+        'russ',
+        'saft',
+        'sel',
+        'skorstein',
+        'snorkel',
+        'snabel',
+        'smøring',
+        'tape',
+        'tango',
+        'tentakkel',
+        'trampoline',
+        'tøddel',
+        'terreng',
+        'utslett',
+        'utsette',
+        'ulykke',
+        'ute',
+        'urverk',
+        'umulig',
+        'viktig',
+        'vanskelig',
+        'veranda',
+        'vanilje',
+        'vindu',
+        'vippse',
+        'watt',
+        'yr',
+        'yoghurt',
+        'ymse',
+        'ynkelig',
+        'ymse',
+        'ydmyk',
+        'ære',
+        'ærlig',
+        'ærbødig',
+        'ærfugl',
+        'øy',
+        'ødelegge',
+        'øde',
+        'økning',
+        'økolog',
+        'økonomi',
+        'åker',
+        'årer',
+        'ålreit',
+        'åpningstid',
+        'åpenbaring',
+        'årbok',
+      ];
+    </script>
+  </body>
+</html>

@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" href="/css/navigasjon/valgtFag.css" />
+    <link rel="stylesheet" href="/css/navbar.css" />
+
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="topnav" id="myTopnav">
+      <a href="/html/navigasjon/hjem.html">Hjem</a>
+      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById('myTopnav');
+        if (x.className === 'topnav') {
+          x.className += ' responsive';
+        } else {
+          x.className = 'topnav';
+        }
+      }
+    </script>
+
+    <img
+      id="bakgrunn"
+      src="/bilder/navigasjon/engelsk.jpg"
+      alt="bakgrunnsbilde"
+    />
+
+    <div class="top">Velkommen til engelsk for 1. - 2. trinn!</div>
+    <div class="center">Er du klar?</div>
+    <div class="bottom">
+      Trykk
+      <button class="btn">
+        <p><a href="/html/engelsk/engelsk1_2.html">her</a></p>
+      </button>
+      for å begynne!
+    </div>
+  </body>
+</html>

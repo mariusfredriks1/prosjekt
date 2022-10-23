@@ -1,0 +1,65 @@
+/*bildene*/
+.container {
+    position: relative;
+    margin-top: 40px;
+    margin-bottom: 16px;
+    border-radius: 30px;
+    
+    display: inline-block;
+
+    height: 370px;
+    background-color: #AEE4AD !important;
+   
+    /* Some left and right padding inside the container */
+    text-align: center;
+    width: 25%;
+
+    transition: width 1s, height 1s;
+
+    padding: 30px;
+}
+
+/*Boksen blir større når musen er over*/
+.container:hover {
+    width: 30%;
+    height: 30%;
+}
+ 
+/* Make the image responsive */
+.container img {
+    width: 100%;
+    height: auto;
+    box-shadow: 0 10px 10px 0 #888888;
+    border-radius: 30px;
+
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+    .column {
+      width: 100%;
+      display: block;
+    }
+  }
+  
+  .title {
+    font-weight: bolder;
+    font-size: 25px;
+    color: #6563DC;
+
+  }
+
+  #overskrift {
+    text-align: center;
+    padding-top: 30px;
+    padding-bottom: 10px;
+    color: #6563DC;
+    font-weight: 1000;
+    font-size: 35px;
+}
+
+
+.w3-row-padding{
+  display: flex;
+  justify-content: center;
+}

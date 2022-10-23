@@ -1,0 +1,42 @@
+/*Fyll bakgrunnen med bilde*/
+#bakgrunn {
+    height:100%;
+    width:100%;
+    background-size: 100% 100%;
+}
+
+.top {
+  position: absolute;
+  top: 260px;
+  left: 420px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.center {
+  position: absolute;
+  top: 350px;
+  left: 570px;
+  font-size: 30px;
+  font-weight: bold;
+
+}
+
+.bottom {
+  position: absolute;
+  top: 410px;
+  left: 670px;
+  font-size: 30px;
+  font-weight: bold;
+}
+
+.btn {
+  color: red;
+  border: none;
+  background-color: inherit;
+}
+
+.hvitTekst{
+ color: white;
+}
+
