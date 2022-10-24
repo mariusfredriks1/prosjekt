@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>Typetest 5-7 klasse</title>
+    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/digFer/typetest.css" />
+    <script src="/js/digFer/typetest.js" defer></script>
+  </head>
+
+  <body onload="fyllSitat()">
+    
+    <div class="topnav" id="myTopnav">
+      <a href="/html/navigasjon/hjem.html">Hjem</a>
+      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+
+
+    <div class="tid_poeng">
+      <div id="timer">60</div>
+      <div id="poeng">Poeng:</div>
+      <div id="poengTekst"></div>
+    </div>
+    <div class="skriveTest">
+      <div id="sitatet" class="sitatet"></div>
+
+
+      <textarea
+        oninput="sjekkSvar();startTimer()"
+        ;
+        id="textArea"
+        autofocus
+      ></textarea>
+    </div>
+    <div class="knapper">
+      <button id="restart" onclick="window.location.reload();">
+        Omstart
+      </button>
+      <button id="tilbakeKnapp" onclick="location.href='/html/navigasjon/5_7.html'">
+        Tilbake
+      </button>
+   
+    </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById('myTopnav');
+        if (x.className === 'topnav') {
+          x.className += ' responsive';
+        } else {
+          x.className = 'topnav';
+        }
+      }
+
+      //Definerer quotes som skal brukes
+      let sitat_array = [
+        'bilen er blå',
+        'toget var forsinket',
+        'vinteren kommer',
+        'hun har brunt hår',
+        'katten er hvit',
+        'hun åpnet døren',
+        'jeg kjøpte en ny pc',
+        'vi spilte fotball',
+        'de løp i skogen',
+        'jeg så en film',
+        'liker du epler',
+        'jeg elsker deg'      
+      ];
+
+      let sitat_array_engelsk = [
+        'the car is blue',
+        'the train was late',
+        'winter is coming',
+        'she has brown hair',
+        'the cat is white',
+        'she opened the door',
+        'i bought a new pc',
+        'we played fotball',
+        'they ran in the forest',
+        'i watched a movie',
+        'do you like apples',
+        'i love you',            
+      ];
+    </script>
+  </body>
+</html>

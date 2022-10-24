@@ -32,4 +32,3 @@ function bakgrunnOnload() {
 function velgTilfeldigFarge() {
     fargeDiv.style.backgroundColor = tilfeldigFarge;
 }
-//indexOf?
