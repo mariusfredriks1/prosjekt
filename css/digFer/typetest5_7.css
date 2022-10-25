@@ -1,25 +1,22 @@
 
 /* Nedtelling og poeng */
-.modal {
-    top: 0%;
-    left: 0%;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-  }
 
-
-
-
-  
 .tid_poeng{
     margin-top: 2rem;
     text-align: center;
+  }
+
+  #timer{
     font-size: 4rem;
     font-weight: bold;
     color: #6563DC;
-}
+  }
+  #poeng, #poeng p{
+    font-size: 3rem;
+    font-weight: bold;
+    color: #6563DC;
+    margin: 0px !important;
+  }
 
 /* Der selve sitatet kommer */
 
@@ -27,6 +24,7 @@
     font-size: 1.5rem;
     font-family: Sans-Serif;
     padding: 1rem;
+    padding-left: 1.87rem;
     text-align: left;   
     margin-left: 3%; 
  
@@ -36,11 +34,11 @@
  
  .skriveTest{
      background-color: rgb(130, 121, 121);
-     border: 5px solid #6563DC;
+     border: 7px solid #6563DC;
      border-radius: 1rem;
      width: 50%;
      margin-left: 25%;
-     margin-top: 3rem;
+     margin-top: 1.5rem;
      text-align: center;
 
      
@@ -49,6 +47,8 @@
 /* Feltet brukeren skriver inn i */
 
  #textArea{
+     padding-top: 1rem;
+     padding-left: 2rem;
      background-color: transparent;
      border: 3px solid #6563DC;
      outline: none;
@@ -83,13 +83,60 @@
 }
 
 #tilbakeKnapp, #restart{
-    border: 3px solid #6563DC;
+    border: 5px solid #6563DC;
     border-radius: 5px ;
     background-color: rgb(130, 121, 121);
-    color: #ffffff;
+    color: black;
     font-size: 24px;
     width: 160px;
     height: 50px;
     margin: 5px;
     cursor: pointer;
 }
+.modal {
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    backdrop-filter: blur(4px);
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    
+  }
+  
+  /* Modal innhold */
+  .modal-content {
+    background-color: #6563DC;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+    border: 5px ridge black;
+    border-radius: 10px;
+    text-align: center;
+    margin: auto;
+    padding: 20px;
+    width: 40%;
+  }
+
+  
+  .modalKnapper{
+    border: 3px solid black;
+    border-radius: 5px ;
+    background-color: #AEE4AD;
+    color: black;
+    font-size: 24px;
+    width: 160px;
+    height: 70px;
+    margin: 5px;
+    cursor: pointer;
+    
+  }
+
+  .modal #resultat{
+    font-size: 25px;
+    font-weight: bold;
+  }

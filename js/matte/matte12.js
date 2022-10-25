@@ -21,7 +21,7 @@ sum = 0
 let verdier = [1,2,3,4]
 let randomTall1 = verdier[Math.floor(Math.random() * verdier.length)];
 let randomTall2 = verdier[Math.floor(Math.random() * verdier.length)];
-let feilsvar = randomTall1+3;
+let feilsvar = randomTall1*2;
 
 /* // bilder inn i array
 img = Array(2)
@@ -47,8 +47,8 @@ function random() {
 // let alt1 = document.getElementById("alt1")
 
 
-function tekstgange() {
-    document.getElementById("alt1").innerText =  randomTall1 * randomTall2;
+function tekst() {
+    document.getElementById("alt1").innerText =  randomTall1 + randomTall2;
     document.getElementById("alt2").innerText =  randomTall1 + feilsvar;
  }
 

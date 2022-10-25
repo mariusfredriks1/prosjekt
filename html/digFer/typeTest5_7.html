@@ -4,12 +4,11 @@
     <meta charset="utf-8" />
     <title>Typetest 5-7 klasse</title>
     <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/digFer/typetest.css" />
+    <link rel="stylesheet" href="/css/digFer/typetest5_7.css" />
     <script src="/js/digFer/typetest.js" defer></script>
   </head>
 
   <body onload="fyllSitat()">
-    
     <div class="topnav" id="myTopnav">
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
@@ -19,32 +18,52 @@
       </a>
     </div>
 
-
-
     <div class="tid_poeng">
       <div id="timer">60</div>
-      <div id="poeng">Poeng:</div>
-      <div id="poengTekst"></div>
+      <div id="poeng">
+        Poeng:
+        <p id="poengTekst"></p>
+      </div>
     </div>
     <div class="skriveTest">
       <div id="sitatet" class="sitatet"></div>
-
-
-      <textarea
-        oninput="sjekkSvar();startTimer()"
-        ;
-        id="textArea"
-        autofocus
-      ></textarea>
+      <div class="textAreaDiv">
+        <textarea
+          oninput="sjekkSvar();startTimer()"
+          ;
+          id="textArea"
+          onpaste="return false"
+          autofocus
+        ></textarea>
+      </div>
     </div>
+
     <div class="knapper">
-      <button id="restart" onclick="window.location.reload();">
-        Omstart
-      </button>
-      <button id="tilbakeKnapp" onclick="location.href='/html/navigasjon/5_7.html'">
+      <button id="restart" onclick="window.location.reload();">Omstart</button>
+      <button
+        id="tilbakeKnapp"
+        onclick="location.href='/html/navigasjon/5_7.html'"
+      >
         Tilbake
       </button>
-   
+    </div>
+
+    <div id="modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p id="resultat"></p>
+        <div>
+          <button class="modalKnapper" onclick="window.location.reload();">
+            Prøv en gang til
+          </button>
+          <button
+            class="modalKnapper"
+            onclick="location.href='/html/navigasjon/5_7.html'"
+          >
+            Prøv et annet spill
+          </button>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -56,13 +75,24 @@
           x.className = 'topnav';
         }
       }
-
+    </script>
+    <script>
+      //Modal som viser resultatet
+      function visModal() {
+        modal.style.display = 'block';
+        if (poeng === 0) {
+          resultat.innerText = `Du fikk dessverre ${poeng} poeng, øvelse gjør mester : )`;
+        } else if (poeng < 5) {
+          resultat.innerText = `Bra innsats, du fikk ${poeng} poeng!`;
+        } else {
+          resultat.innerText = `Veldig bra jobbet, du fikk ${poeng} poeng!`;
+        }
+      }
       //Definerer quotes som skal brukes
       let sitat_array = [
         'gresset er grønnere på andre siden av gjerdet',
         'jeg skulle ikke spise den, jeg skulle bare smake på den',
         'nøtter er ikke noe for en hel rev',
-        'det var hyggelig at du kom men enda hyggeligere at du går',
         'det er typisk norsk å være god',
         'enten så går det fint eller så går det over',
         'utsett ikke til i morgen det du kan gjøre i overmorgen',

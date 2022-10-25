@@ -2,48 +2,76 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <title>Mattegøy for 1. og 2. trinn</title>
-    
+    <title>Mattegøy 1-2</title>
+    <link rel="stylesheet" href="/css/matte/matte1_2.css ">
+    <script src="/js/matte/matte12.js" defer></script>
+    <link rel="stylesheet" href="/css/navbar.css" />
     <link
-      rel="stylesheet" src="/js/matte/matte1_2.js"
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
     />
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-    
+  </head>
+
 </head>
-<body>
-  <nav class="navbar navbar-inverse">
-    <div class="container-fluid">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="#">Gruppe 10 prosjekt</a>
-      </div>
-      <ul class="nav navbar-nav">
-        <li class="active"><a href="#">Hjem</a></li>
-        <li><a href="#">Matte</a></li>
-        <li><a href="#">Side ?</a></li>
-        <li><a href="#">Side ?</a></li>
-        <li><a href="#">Hjelp</a></li>
-        <li><a href="#">Om oss</a></li>
-      </ul>
-    </div>
-  </nav>
+<body onload=tekst()>
 
-    <!--Arrays som skal legges sammen, og man får tre alternativer der en skal være riktig-->
-    <div id="oppgave">
-     <div id="frukt1" onload="randomfrukt()" alt="frukt"> En</div>
-      <div id="frukt2" onload="randomfrukt()"> To </div>
-    </div>
+  <div class="topnav" id="myTopnav">
+    <a href="/html/navigasjon/hjem.html">Hjem</a>
+    <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+    <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <i class="fa fa-bars"></i>
+    </a>
+  </div>
 
+  <script>
+    function myFunction() {
+      var x = document.getElementById('myTopnav');
+      if (x.className === 'topnav') {
+        x.className += ' responsive';
+      } else {
+        x.className = 'topnav';
+      }
+    }
+  </script>
+    
+    <!--Arrays som skal legges sammen, og man får tre alternativer der en skal være riktig
+    to divs som er 40% hver med pluss tegn i mellom-->
+    
+    <div class="flex-container" href="#">
+      <div class="flex-childfrukt1" id ="flex-childfrukt1" href="#" onload="random()" alt="frukt"> </div>
+      <div class="flex-childplus" href="#"> + </div> 
+            <div class="flex-childfrukt2" id ="flex-childfrukt2" href="#" onload="random()"> To </div>
+      <div class="flex-childequals" href="#"> = </div>
+   </div>
 
-    <div id="svaralt">
-      <div id="alt1" onclick="riktig()"></div>
-      <div id="alt2" onclick="feil()"></div>
-      <div id="alt3"></div>
       <!--Grid med svaralt-->
+    <div class="flex-containerKnapper" href="#">
+      
+      <div class="flex-childAlt1" href="#" alt="svar1"> 
+        <button id="alt1"> </button>
+      </div>
+      <div class="flex-childAlt2" href="#" alt="svar2" >
+        <button id="alt2"> </button>
+      </div>
+
+      <!---<div class="flex-childalt3" href="#" alt="svar1"> 
+        <button id="alt3"></button> </div>--->
+      
+     </div>
+
+     <!-- The Modal -->
+    <div id="modal" class="modal">
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Helt riktig! Trykk "X" for å gå videre</p>
     </div>
 
+  </div>
 
 </body>
 </html>

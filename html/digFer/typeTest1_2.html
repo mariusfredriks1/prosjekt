@@ -4,11 +4,11 @@
     <meta charset="utf-8" />
     <title>Typetest 1-2 klasse</title>
     <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/digFer/typetest.css" />
-    <script src="/js/digFer/typetest.js" defer></script>
+    <link rel="stylesheet" href="/css/digFer/typetest1_2.css" />
+    <script src="/js/digFer/typetest1_2.js" defer ></script>
   </head>
 
-  <body onload="fyllSitat()">
+  <body onload=" fyllBokstav()">
     <div class="topnav" id="myTopnav">
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
@@ -19,17 +19,49 @@
     </div>
     <div class="tid_poeng">
       <div id="timer">60</div>
-      <div id="poeng">Poeng:</div>
-      <div id="poengTekst"></div>
+      <div id="poeng">
+        Poeng:
+        <p id="poengTekst"></p>
+      </div>
     </div>
     <div class="skriveTest">
       <div id="sitatet" class="sitatet"></div>
-      <textarea
-        oninput="sjekkSvar();startTimer()"
-        ;
-        id="textArea"
-        autofocus
-      ></textarea>
+      <div class="textAreaDiv">
+        <textarea
+          oninput="sjekkSvar();startTimer()"
+          ;
+          id="textArea"
+          autofocus
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="knapper">
+      <button id="restart" onclick="window.location.reload();">Omstart</button>
+      <button
+        id="tilbakeKnapp"
+        onclick="location.href='/html/navigasjon/1_2.html'"
+      >
+        Tilbake
+      </button>
+    </div>
+    
+    <div id="modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p id="resultat"></p>
+        <div>
+          <button class="modalKnapper" onclick="window.location.reload();">
+            Prøv en gang til
+          </button>
+          <button
+            class="modalKnapper"
+            onclick="location.href='/html/navigasjon/1_2.html'"
+          >
+            Prøv et annet spill
+          </button>
+        </div>
+      </div>
     </div>
     <script>
       function myFunction() {
@@ -40,40 +72,8 @@
           x.className = 'topnav';
         }
       }
-
-      //Definerer quotes som skal brukes
-
-      let sitat_array = [
-        'a',
-        'b',
-        'c',
-        'd',
-        'e',
-        'f',
-        'g',
-        'h',
-        'i',
-        'j',
-        'k',
-        'l',
-        'm',
-        'n',
-        'o',
-        'p',
-        'q',
-        'r',
-        's',
-        't',
-        'u',
-        'v',
-        'w',
-        'x',
-        'y',
-        'z',
-        'æ',
-        'ø',
-        'å',
-      ];
     </script>
+
+
   </body>
 </html>

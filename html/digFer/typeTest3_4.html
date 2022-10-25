@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <title>Typetest 3-4 klasse</title>
     <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/digFer/typetest.css" />
+    <link rel="stylesheet" href="/css/digFer/typetest3_4.css" />
     <script src="/js/digFer/typetest.js" defer></script>
   </head>
 
@@ -19,17 +19,49 @@
     </div>
     <div class="tid_poeng">
       <div id="timer">60</div>
-      <div id="poeng">Poeng:</div>
-      <div id="poengTekst"></div>
+      <div id="poeng">
+        Poeng:
+        <p id="poengTekst"></p>
+      </div>
     </div>
     <div class="skriveTest">
       <div id="sitatet" class="sitatet"></div>
-      <textarea
-        oninput="sjekkSvar();startTimer()"
-        ;
-        id="textArea"
-        autofocus
-      ></textarea>
+      <div class="textAreaDiv">
+        <textarea
+          oninput="sjekkSvar();startTimer()"
+          ;
+          id="textArea"
+          autofocus
+        ></textarea>
+      </div>
+    </div>
+
+    <div class="knapper">
+      <button id="restart" onclick="window.location.reload();">Omstart</button>
+      <button
+        id="tilbakeKnapp"
+        onclick="location.href='/html/navigasjon/3_4.html'"
+      >
+        Tilbake
+      </button>
+    </div>
+
+    <div id="modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p id="resultat"></p>
+        <div>
+          <button class="modalKnapper" onclick="window.location.reload();">
+            Prøv en gang til
+          </button>
+          <button
+            class="modalKnapper"
+            onclick="location.href='/html/navigasjon/3_4.html'"
+          >
+            Prøv et annet spill
+          </button>
+        </div>
+      </div>
     </div>
     <script>
       function myFunction() {
@@ -38,6 +70,21 @@
           x.className += ' responsive';
         } else {
           x.className = 'topnav';
+        }
+      }
+    </script>
+    <script>
+
+
+      //Modal som viser resultatet
+      function visModal() {
+        modal.style.display = 'block';
+        if (poeng < 10) {
+          resultat.innerText = `Du fikk ${poeng} poeng, øvelse gjør mester : )`;
+        } else if (poeng < 25) {
+          resultat.innerText = `Bra innsats, du fikk ${poeng} poeng!`;
+        } else {
+          resultat.innerText = `Veldig bra jobbet, du fikk ${poeng} poeng!`;
         }
       }
 
@@ -120,7 +167,6 @@
         'nekte',
         'nisse',
         'nebb',
-        'nølle',
         'nøle',
         'oberst',
         'onkel',
