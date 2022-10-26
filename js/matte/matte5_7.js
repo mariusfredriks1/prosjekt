@@ -4,38 +4,35 @@ let riktig = document.getElementById("alt1")
 let poeng = [];
 sum = 0
 
-/* riktig.onclick = () => {
+riktig.onclick = () => {
+  modal.style.display = "block";
         //document.createElement("div")
-        poengpush([1]);
+        poeng.push([1]);
         sum = poeng.length;
-        console.log(sum);
-}{
-        random()
-    }  */
+        console.log(poeng);
+  }
 
   // let feil =
 
+  // intern update
+  function update() {
+    $( ".flex-container").load(window.location.href + " .flex-container")
+    $( ".flex-containerKnapper").load(window.location.href + " .flex-containerKnapper")
 
-//verdi til bildene som lastes inn
+  }
 
 let verdier = []
-for(let i=0; i < 100; i++) {
-    console.log(verdier);
-}
 
+for(let i=0; i <= 10; i++) {
+    verdier.push(i)
+    console.log(verdier[i])
+}
+ 
 let randomTall1 = verdier[Math.floor(Math.random() * verdier.length)];
 let randomTall2 = verdier[Math.floor(Math.random() * verdier.length)];
-let feilsvar = randomTall1+3;
+let feilsvar = randomTall1+1;
 
-/* // bilder inn i array
-img = Array(2)
-img[0] = new Image
-img[0].src="./img/matte1_2/tobananer.png"
-img[1] = new Image
-img[1].src='/img/matte1_2/matte1.JPG'
-
-let randombilde = img[Math.floor(math.random() * img.length)]; */
-
+// tekst til knapper og mulitplikasjon eller divisjon
 
 let alternativ1 = document.getElementById("flex-childfrukt1")
 let alternativ2 = document.getElementById("flex-childfrukt2")
@@ -46,28 +43,20 @@ function random() {
     
 } console.log(random())
 
-
 // knapper
-// let alt1 = document.getElementById("alt1")
-
-
 function tekstgange() {
     document.getElementById("alt1").innerText =  randomTall1 * randomTall2;
     document.getElementById("alt2").innerText =  randomTall1 + feilsvar;
  }
 
-
-// Get the modal
+// modal
 var modal = document.getElementById("modal");
 var span = document.getElementsByClassName("close")[0];
 
 // When the user clicks the button, open the modal 
-riktig.onclick = function() {
+ riktig.onclick = function() {
   modal.style.display = "block";
-    
-  }
-    //random(). window.reload
-
+  } 
 
 // When the user clicks on <span> (x), close the modal
 span.onclick = function() {

@@ -1,14 +1,20 @@
+body {
+    background-color: #AEE4AD !important;
+}
+
+
 /* Styling til oppgave*/
 .flex-container {
     display: flex;
     padding-right: 30px;
+    height: 70%;
     
 
 }.flex-childfrukt1 {
     flex: 1;
     text-align: center;
     padding: 20%;
-    height: 150px;
+    height: 130px;
     width: 50%;
     
 }
@@ -23,7 +29,7 @@
     flex: 1;
     text-align: center;
     padding: 20%;
-    height: 150px;
+    height: 130px;
     width: 50%;
     
 }
@@ -64,7 +70,7 @@
       }
 
 /* riktig onclick */
-#alt1:onclick {
+#alt1.onclick {
     background-color: #4154ac; /* Blue */
     border: none;
     color: white;

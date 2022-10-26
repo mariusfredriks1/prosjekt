@@ -5,12 +5,18 @@
     background-size: 100% 100%;
 }
 
+.velkomst {
+  position: absolute;
+  width: 100%;
+}
+
 .top {
   position: absolute;
   top: 260px;
   left: 420px;
   font-size: 30px;
   font-weight: bold;
+  width: 100%;
 }
 
 .center {
@@ -19,6 +25,7 @@
   left: 570px;
   font-size: 30px;
   font-weight: bold;
+  width: 100%;
 
 }
 
@@ -28,6 +35,7 @@
   left: 670px;
   font-size: 30px;
   font-weight: bold;
+  width: 100%;
 }
 
 .btn {

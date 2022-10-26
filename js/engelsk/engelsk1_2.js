@@ -27,17 +27,22 @@ const hexArray = [
 ];
 
 let tilfeldigFarge = hexArray[Math.floor(Math.random() * hexArray.length)];
-
-function bakgrunnOnload() {
-  colorBoard.style.text = red;
-}
+let randomtekst = fargeArray[Math.floor(Math.random() * hexArray.length)];
+// tilfeldig bakgrunn
 
 function velgTilfeldigFarge() {
-<<<<<<< HEAD
-    fargeDiv.style.backgroundColor = tilfeldigFarge;
+  location.reload()
 }
-=======
+
+// knappeinnhold
+function bakgrunnOnload() {
   colorBoard.style.backgroundColor = tilfeldigFarge;
+} //hente samme index i farge som i hex
+
+// tilfeldig knappeinnhold
+function tekst() {
+  document.getElementById("knapp2").innerText =  randomtekst;
+  
 }
-//indexOf?
->>>>>>> 24e3e9cce305b868dde9e8f04835ee5b84a1f3ea
+
+

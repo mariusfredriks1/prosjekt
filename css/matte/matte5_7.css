@@ -1,3 +1,8 @@
+body {
+    background-color: #AEE4AD !important;
+}
+
+
 /* Styling til oppgave*/
 .flex-container {
     display: flex;

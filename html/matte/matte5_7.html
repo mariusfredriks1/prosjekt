@@ -7,20 +7,13 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
     <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="stylesheet" href="/css/matte/matte3_4.css ">
-
+    <script src="/js/matte/matte5_7.js" defer></script>
 
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    <style>
-      #nav {
-        color: aqua;
-
-        /*prøvde å style int for å styre den selv, nå styres den etter css i CDn*/
-      }
-    </style>
   </head>
 
-  <body>
+  <body onload="tekstgange()">
    
   <div class="topnav" id="myTopnav">
     <a href="/html/navigasjon/hjem.html">Hjem</a>
@@ -44,7 +37,7 @@
     <div class="flex-container" href="#">
       <div class="flex-childfrukt1" id ="flex-childfrukt1" href="#" onload="random()" alt="frukt"> </div>
       <div class="flex-childplus" href="#"> x </div> 
-            <div class="flex-childfrukt2" id ="flex-childfrukt2" href="#" onload="random()">  </div>
+            <div class="flex-childfrukt2" id ="flex-childfrukt2" href="#" >  </div>
       <div class="flex-childequals" href="#"> = </div>
    </div>
 
@@ -54,7 +47,7 @@
       <div class="flex-childAlt1" href="#" alt="svar1"> 
         <button id="alt1"> </button>
       </div>
-      <div class="flex-childAlt2" href="#" alt="svar2" >
+      <div class="flex-childAlt2" href="#" alt="svar2">
         <button id="alt2"> </button>
       </div>
 

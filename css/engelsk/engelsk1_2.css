@@ -1,0 +1,22 @@
+body {
+    background-color: #AEE4AD !important;
+}
+
+.text-center{
+    padding-bottom: 25px;;
+}
+
+#colorBoard {
+    width: 600px;
+    height: 300px; 
+    
+    border-style: solid; 
+    border-width: 1;
+
+    margin-left: 25%; 
+    margin-bottom: 25px;
+}
+
+.knapp-div {
+    margin-top: 50px;
+}

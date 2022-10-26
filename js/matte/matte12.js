@@ -23,6 +23,8 @@ let randomTall1 = verdier[Math.floor(Math.random() * verdier.length)];
 let randomTall2 = verdier[Math.floor(Math.random() * verdier.length)];
 let feilsvar = randomTall1*2;
 
+let bilder = ["https://iform.no/wp-content/uploads/2017/03/shutterstock_16755115.jpg"]
+let randombilde = bilder[Math.floor(Math.random() * bilder.lenght)]
 /* // bilder inn i array
 img = Array(2)
 img[0] = new Image
@@ -37,7 +39,7 @@ let alternativ1 = document.getElementById("flex-childfrukt1")
 let alternativ2 = document.getElementById("flex-childfrukt2")
 
 function random() {
-    alternativ1.innerHTML = randomTall1;
+    alternativ1.innerHTML = randombilde;
     alternativ2.innerHTML = randomTall2;
     
 } console.log(random())
@@ -60,7 +62,6 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 riktig.onclick = function() {
   modal.style.display = "block";
-    
   }
     //random(). window.reload
 

@@ -5,12 +5,13 @@ html {
 /* Create four equal columns that floats next to each other */
 .column {
   float: left;
-  width: 20%;
+  width: 22%;
   padding: 20px;
   background-color: #aee4ad !important;
 }
 .row {
-  margin-left: 10%;
+  margin-left: 12%;
+  position: relative;
 }
 /* Clear floats after the columns */
 .container::after,
@@ -21,14 +22,14 @@ html {
 }
 
 /* On screens that are 992px wide or less, go from four columns to two columns */
-@media screen and (max-width: 992px) {
+@media screen and (max-width: 1250px) {
   .column {
     width: 40%;
   }
 }
 
 /* On screens that are 600px wide or less, make the columns stack on top of each other instead of next to each other */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 700px) {
   .column {
     width: 80%;
   }
@@ -41,6 +42,7 @@ html {
   border: 5px ridge black;
   border-radius: 10px;
   text-align: center;
+  
 }
 
 .title {

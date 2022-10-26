@@ -42,11 +42,6 @@ function random() {
     
 } console.log(random())
 
-
-// knapper
-// let alt1 = document.getElementById("alt1")
-
-
 function tekstgange() {
     document.getElementById("alt1").innerText =  randomTall1 * randomTall2;
     document.getElementById("alt2").innerText =  randomTall1 + feilsvar;
@@ -60,9 +55,8 @@ var span = document.getElementsByClassName("close")[0];
 // When the user clicks the button, open the modal 
 riktig.onclick = function() {
   modal.style.display = "block";
-    
   }
-    //random(). window.reload
+  
 
 
 // When the user clicks on <span> (x), close the modal
