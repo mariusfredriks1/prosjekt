@@ -26,14 +26,14 @@
     </div>
     <div class="skriveTest">
       <div id="sitatet" class="sitatet"></div>
-      <div class="textAreaDiv">
         <textarea
           oninput="sjekkSvar();startTimer()"
           ;
           id="textArea"
+          onpaste="return false"
+          spellcheck="false"
           autofocus
         ></textarea>
-      </div>
     </div>
 
     <div class="knapper">
@@ -74,8 +74,6 @@
       }
     </script>
     <script>
-
-
       //Modal som viser resultatet
       function visModal() {
         modal.style.display = 'block';

@@ -21,10 +21,14 @@
 /* Der selve sitatet kommer */
 
 .sitatet{
-    font-size: 5rem;
-    font-family: Sans-Serif;
-    padding: 1rem;
-    text-align: center;   
+  margin: auto;
+  padding-left: 3%;
+  padding-top: 1.5%;
+  padding-bottom: 1.5%;
+  font-size: 5rem;
+  font-family: Sans-Serif;
+  width: 86%;
+  text-align: left;   
  
  }    
  
@@ -37,35 +41,31 @@
      width: 50%;
      margin-left: 25%;
      margin-top: 1.5rem;
+     text-align: center;
 
      
  }
  /* Div rundt textArea */
- .textAreaDiv{
-    width: 80%;
-    margin-left: 10%;
-    margin-right: 10%;
-
- }
+ 
 /* Feltet brukeren skriver inn i */
 
  #textArea{
-    width: 100%;
-    height: 10rem;
-    resize: none;
-    border-radius: 1rem;
-    margin-bottom: 1rem;
-    padding-top: 1rem;
     background-color: transparent;
-    caret-color: transparent;
-    border: 3px solid #6563DC;
     outline: none;
     font-size: 5rem;
     font-family: Sans-Serif;
-    text-align: center;
-
+    width: 86%;
+    height: 10rem;
+    resize: none;
+    border: 3px solid #6563DC;
+    border-radius: 1rem;
+    margin: auto;
+    margin-bottom: 1rem;
+    padding-left: 3%;
+    padding-top: 3%;
+    
+    caret-color: transparent;
      
- 
  }
  
 /* Klasse som settes til bokstav hvis input stemmer */
