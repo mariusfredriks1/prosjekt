@@ -33,7 +33,7 @@
 /* Make the image responsive */
 .container img {
     width: 100%;
-    opacity: 70%;
+    opacity: 80%;
     box-shadow: 0 10px 10px 0 #888888;
     border-radius: 30px;
 

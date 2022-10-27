@@ -180,6 +180,9 @@ let startTimer = () => {
       tidsgrense--;
       document.getElementById('timer').textContent = tidsgrense;
       if (tidsgrense === 0) {
+      /*.disabled passer på at brukeren ikke får skrevet inn
+        mer i textarea etter tiden har gått ut */
+        textArea.disabled = true;
         visModal();
         clearInterval(nedtelling);
       }
