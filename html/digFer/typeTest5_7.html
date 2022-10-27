@@ -27,14 +27,13 @@
     </div>
     <div class="skriveTest">
       <div id="sitatet" class="sitatet"></div>
-        <textarea
-          oninput="sjekkSvar();startTimer()"
-          ;
-          id="textArea"
-          onpaste="return false"
-          spellcheck="false"
-          autofocus
-        ></textarea>
+      <textarea
+        oninput="sjekkSvar();startTimer()"
+        ;
+        id="textArea"
+        onpaste="return false"
+        spellcheck="false"
+      ></textarea>
     </div>
 
     <div class="knapper">
@@ -48,9 +47,8 @@
     </div>
 
     <div id="modal" class="modal">
-      <!-- Modal content -->
       <div class="modal-content">
-        <p id="resultat"></p>
+        <p id="modalResultat"></p>
         <div>
           <button class="modalKnapper" onclick="window.location.reload();">
             Prøv en gang til
@@ -60,6 +58,27 @@
             onclick="location.href='/html/navigasjon/5_7.html'"
           >
             Prøv et annet spill
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <div id="velkommenModal" class="velkommenModal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <p id="modalTekst">
+          Velkommen til Digitale Ferdigheter for 5. -7. trinn! Her skal du
+          skrive inn setningen så fort du kan. Er du klar?
+        </p>
+        <div>
+          <button class="modalKnapper" onclick="fjernVelkomstModal()">
+            Start spill!
+          </button>
+          <button
+            class="modalKnapper"
+            onclick="location.href='/html/navigasjon/5_7.html'"
+          >
+            Nei, tilbake!
           </button>
         </div>
       </div>
@@ -77,16 +96,27 @@
     </script>
     <script>
       //Modal som viser resultatet
-      function visModal() {
+      let visModal = () => {
         modal.style.display = 'block';
         if (poeng === 0) {
-          resultat.innerText = `Du fikk dessverre ${poeng} poeng, øvelse gjør mester : )`;
+          modalResultat.innerText = `Du fikk dessverre ${poeng} poeng, øvelse gjør mester : )`;
         } else if (poeng < 5) {
-          resultat.innerText = `Bra innsats, du fikk ${poeng} poeng!`;
+          modalResultat.innerText = `Bra innsats, du fikk ${poeng} poeng!`;
         } else {
-          resultat.innerText = `Veldig bra jobbet, du fikk ${poeng} poeng!`;
+          modalResultat.innerText = `Veldig bra jobbet, du fikk ${poeng} poeng!`;
         }
-      }
+      };
+
+   /*    let hasCodeRunBefore = false;
+
+      let fjernVelkomstModal = () => {
+        if (localStorage.getItem('hasCodeRunBefore') === null) {
+          velkommenModal.style.display = 'none';
+          textArea.focus();
+          localStorage.setItem('hasCodeRunBefore', true);
+        }
+      }; */
+
       //Definerer quotes som skal brukes
       let sitat_array = [
         'gresset er grønnere på andre siden av gjerdet',

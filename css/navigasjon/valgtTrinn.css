@@ -25,6 +25,7 @@
 .container:hover {
   width: 30%;
   height: 30%;
+  cursor: pointer;
 }
 
 

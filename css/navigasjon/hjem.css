@@ -4,25 +4,23 @@
     margin-top: 40px;
     margin-bottom: 16px;
     border-radius: 30px;
-    
     display: inline-block;
-
     height: 370px;
-    background-color: #AEE4AD !important;
-   
-    /* Some left and right padding inside the container */
+    background-color: #AEE4AD !important;   
     text-align: center;
     width: 25%;
-
     transition: width 1s, height 1s;
-
     padding: 30px;
 }
 
 /*Boksen blir større når musen er over*/
-.container:hover {
+.container:hover{
     width: 30%;
     height: 30%;
+    cursor: pointer;
+
+   
+    
 }
  
 /* Make the image responsive */
@@ -46,6 +44,7 @@
     font-weight: bolder;
     font-size: 25px;
     color: #6563DC;
+
 
   }
 

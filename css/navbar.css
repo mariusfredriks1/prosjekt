@@ -2,7 +2,6 @@
 .topnav {
     overflow: hidden;
     background-color: #6563DC;
-    height: 70px;
   }
   
   .topnav a {
@@ -20,23 +19,26 @@
   .topnav a:hover {
     background-color: #ddd;
     color: black;
-    height: 70px;
   }
    
   .topnav .icon {
     display: none;
   }
   
-  @media screen and (max-width: 600px) {
-    .topnav a:not(:first-child) {display: none;}
+  @media screen and (max-width: 725px) {
+    .topnav a:not(:first-child) {
+      display: none;
+    }
     .topnav a.icon {
       float: right;
       display: block;
     }
   }
   
-  @media screen and (max-width: 600px) {
-    .topnav.responsive {position: relative;}
+  @media screen and (max-width: 725px) {
+    .topnav.responsive {
+      position: relative;
+    }
     .topnav.responsive .icon {
       position: absolute;
       right: 0;

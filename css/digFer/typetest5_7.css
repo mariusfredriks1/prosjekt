@@ -138,7 +138,30 @@
     
   }
 
-  .modal #resultat{
+  #modalResultat, #modalTekst{
     font-size: 25px;
     font-weight: bold;
   }
+
+
+.velkommenModal {
+    top: 0%;
+    left: 0%;
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    background: rgba(0, 0, 0, 0.5);
+    display: block; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 1; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    backdrop-filter: blur(4px);
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    
+  }
+  
+ 
+ 
+
+ 

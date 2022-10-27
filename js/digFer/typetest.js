@@ -175,7 +175,7 @@ if(!started) ikke stemmer. Dette er fordi variablen started har endret verdi til
 */
 let startTimer = () => {
   if (!started) {
-    let tidsgrense = 60;
+    let tidsgrense = 10;
     let nedtelling = setInterval(function () {
       tidsgrense--;
       document.getElementById('timer').textContent = tidsgrense;

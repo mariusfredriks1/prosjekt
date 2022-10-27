@@ -5,37 +5,41 @@
     background-size: 100% 100%;
 }
 
-.velkomst {
-  position: absolute;
-  width: 100%;
-}
-
 .top {
   position: absolute;
-  top: 260px;
-  left: 420px;
+  top: 30%;
+  left: 25%;
   font-size: 30px;
   font-weight: bold;
-  width: 100%;
+  width: 60%;
+  margin-bottom: 1rem !important;
+  margin: auto;
 }
 
 .center {
   position: absolute;
-  top: 350px;
-  left: 570px;
+  top: 60%;
+  left: 35%;
   font-size: 30px;
   font-weight: bold;
-  width: 100%;
+  width: 50%;
+  margin-bottom: 1rem !important;
+
+  margin: auto;
 
 }
 
 .bottom {
   position: absolute;
-  top: 410px;
-  left: 670px;
+  top: 67%;
+  left: 45%;
   font-size: 30px;
   font-weight: bold;
-  width: 100%;
+  width: 50%;
+  margin-bottom: 1rem !important;
+
+  margin: auto;
+
 }
 
 .btn {
@@ -47,4 +51,5 @@
 .hvitTekst{
  color: white;
 }
+
 
