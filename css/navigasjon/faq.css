@@ -1,9 +1,14 @@
+body,
+html {
+  overflow: visible !important;
+}
 .faqDiv{
-  width: 65%;
   margin:auto;
+  max-width: 800px;
   border: 5px solid black;
   border-radius: 15px;
   background-color: #AEE4AD;
+  
 }
 .spm{
   width: 80%;
@@ -30,9 +35,7 @@ p{
   font-weight: 700 !important;
 }
 
-html{
-  overflow: auto !important;
-}
+
 
 body{
   background-image: url(/bilder/faq/faq.jpg) !important;

@@ -9,13 +9,12 @@
     <script src="/js/engelsk/engelsk1_2.js" defer></script>
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
   </head>
   <body onload="bakgrunnOnload()">
-  
     <div class="topnav" id="myTopnav">
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
@@ -24,7 +23,7 @@
         <i class="fa fa-bars"></i>
       </a>
     </div>
-  
+
     <script>
       function myFunction() {
         var x = document.getElementById('myTopnav');
@@ -37,16 +36,12 @@
     </script>
 
     <div class="text-center">
-      <h2>Trykk på rett farge </h2>
-      <p> for ny farge trykk "reset"-knappen</p>
-      <button
-        onclick="velgTilfeldigFarge()"
-        id="startKnapp"> RESET
-      </button>
+      <h2>Trykk på rett farge</h2>
+      <p>for ny farge trykk "reset"-knappen</p>
+      <button onclick="velgTilfeldigFarge()" id="startKnapp">RESET</button>
     </div>
 
-    <div id="colorBoard">
-    </div>
+    <div id="colorBoard"></div>
 
     <div id="knappDiv" class="text-center">
       <button class="btn btn-secondary btn-rounded" id="knapp1">Test</button>

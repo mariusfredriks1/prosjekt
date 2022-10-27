@@ -6,10 +6,14 @@
     <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="stylesheet" href="/css/digFer/typetest.css" />
     <script src="/js/digFer/typetest.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   </head>
 
   <body onload="fyllSitat()">
-    
     <div class="topnav" id="myTopnav">
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
@@ -19,8 +23,6 @@
       </a>
     </div>
 
-
-
     <div class="tid_poeng">
       <div id="timer">60</div>
       <div id="poeng">Poeng:</div>
@@ -28,7 +30,6 @@
     </div>
     <div class="skriveTest">
       <div id="sitatet" class="sitatet"></div>
-
 
       <textarea
         oninput="sjekkSvar();startTimer()"
@@ -38,13 +39,13 @@
       ></textarea>
     </div>
     <div class="knapper">
-      <button id="restart" onclick="window.location.reload();">
-        Omstart
-      </button>
-      <button id="tilbakeKnapp" onclick="location.href='/html/navigasjon/5_7.html'">
+      <button id="restart" onclick="window.location.reload();">Omstart</button>
+      <button
+        id="tilbakeKnapp"
+        onclick="location.href='/html/navigasjon/5_7.html'"
+      >
         Tilbake
       </button>
-   
     </div>
 
     <script>
@@ -70,7 +71,7 @@
         'de løp i skogen',
         'jeg så en film',
         'liker du epler',
-        'jeg elsker deg'      
+        'jeg elsker deg',
       ];
 
       let sitat_array_engelsk = [
@@ -85,7 +86,7 @@
         'they ran in the forest',
         'i watched a movie',
         'do you like apples',
-        'i love you',            
+        'i love you',
       ];
     </script>
   </body>

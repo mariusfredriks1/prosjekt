@@ -9,83 +9,102 @@
     <script src="/js/engelsk/engelsk3_4.js" defer></script>
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   </head>
   <body>
-
     <div class="topnav" id="myTopnav">
-        <a href="/html/navigasjon/hjem.html">Hjem</a>
-        <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
-        <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-          <i class="fa fa-bars"></i>
-        </a>
-      </div>
-    
-      <script>
-        function myFunction() {
-          var x = document.getElementById('myTopnav');
-          if (x.className === 'topnav') {
-            x.className += ' responsive';
-          } else {
-            x.className = 'topnav';
-          }
+      <a href="/html/navigasjon/hjem.html">Hjem</a>
+      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
+
+    <script>
+      function myFunction() {
+        var x = document.getElementById('myTopnav');
+        if (x.className === 'topnav') {
+          x.className += ' responsive';
+        } else {
+          x.className = 'topnav';
         }
-      </script>
-
-<h2>Dra og slipp</h2>
-<p>Dra ordet fra venstre til riktig oversetting på høyre </p>
-
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-  <p draggable="true" ondragstart="drag(event)" id="drag1" width="88" height="31"> Gutt </p>
-</div>
-
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
-
-<div id="boy"> Boy </div>
-
-<br><br><br>
-
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-    <p draggable="true" ondragstart="drag(event)" id="drag2" width="88" height="31"> Jente </p>
-  </div>
-  
-  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
-  
-  <div id="girl"> Girl </div>
-  
-  <br><br><br>
-  
-<div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"> 
-    <p draggable="true" ondragstart="drag(event)" id="drag3" width="88" height="31"> Gutt </p>
-  </div>
-  
-  <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"> </div>
-  
-  <div id="girl"> Boy </div>
-      
-<script>
-        
-function allowDrop(ev) {
-  ev.preventDefault();
-}
-
-function drag(ev) {
-  ev.dataTransfer.setData("text", ev.target.id);
-}
-
-function drop(ev) {
-  ev.preventDefault();
-  var data = ev.dataTransfer.getData("text");
-  ev.target.appendChild(document.getElementById(data));
-}
-
-//if (div1 = div2) etc..
-
+      }
     </script>
-    
-    </body>
-    </html>
+
+    <h2>Dra og slipp</h2>
+    <p>Dra ordet fra venstre til riktig oversetting på høyre</p>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p
+        draggable="true"
+        ondragstart="drag(event)"
+        id="drag1"
+        width="88"
+        height="31"
+      >
+        Gutt
+      </p>
+    </div>
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="boy">Boy</div>
+
+    <br /><br /><br />
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p
+        draggable="true"
+        ondragstart="drag(event)"
+        id="drag2"
+        width="88"
+        height="31"
+      >
+        Jente
+      </p>
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="girl">Girl</div>
+
+    <br /><br /><br />
+
+    <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)">
+      <p
+        draggable="true"
+        ondragstart="drag(event)"
+        id="drag3"
+        width="88"
+        height="31"
+      >
+        Gutt
+      </p>
+    </div>
+
+    <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+
+    <div id="girl">Boy</div>
+
+    <script>
+      function allowDrop(ev) {
+        ev.preventDefault();
+      }
+
+      function drag(ev) {
+        ev.dataTransfer.setData('text', ev.target.id);
+      }
+
+      function drop(ev) {
+        ev.preventDefault();
+        var data = ev.dataTransfer.getData('text');
+        ev.target.appendChild(document.getElementById(data));
+      }
+
+      //if (div1 = div2) etc..
+    </script>
+  </body>
+</html>

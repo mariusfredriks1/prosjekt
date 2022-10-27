@@ -17,10 +17,7 @@
 .container:hover{
     width: 30%;
     height: 30%;
-    cursor: pointer;
-
-   
-    
+    cursor: pointer;    
 }
  
 /* Make the image responsive */
@@ -29,20 +26,24 @@
     height: auto;
     box-shadow: 0 10px 10px 0 #888888;
     border-radius: 30px;
-
 }
 
 /* Display the columns below each other instead of side by side on small screens */
 @media screen and (max-width: 650px) {
-    .column {
+    .container {
       width: 100%;
-      display: block;
+      display: inline-block;
+    }
+    .container:hover{
+      width: 130%;
+      height: 130%;
+      cursor: pointer;
     }
   }
   
   .title {
     font-weight: bolder;
-    font-size: 25px;
+    font-size: 30px;
     color: #6563DC;
 
 

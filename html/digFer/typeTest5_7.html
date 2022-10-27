@@ -5,6 +5,12 @@
     <title>Typetest 5-7 klasse</title>
     <link rel="stylesheet" href="/css/navbar.css" />
     <link rel="stylesheet" href="/css/digFer/typetest5_7.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
     <script src="/js/digFer/typetest.js" defer></script>
   </head>
 
@@ -64,7 +70,6 @@
     </div>
 
     <div id="velkommenModal" class="velkommenModal">
-      <!-- Modal content -->
       <div class="modal-content">
         <p id="modalTekst">
           Velkommen til Digitale Ferdigheter for 5. -7. trinn! Her skal du
@@ -107,15 +112,22 @@
         }
       };
 
-   /*    let hasCodeRunBefore = false;
+      let hasCodeRunBefore = false;
 
       let fjernVelkomstModal = () => {
-        if (localStorage.getItem('hasCodeRunBefore') === null) {
+        alert(2);
+        if (localStorage.getItem('hasCodeRunBefore') == 'true') {
           velkommenModal.style.display = 'none';
           textArea.focus();
-          localStorage.setItem('hasCodeRunBefore', true);
+          localStorage.setItem('hasCodeRunBefore', 'true');
         }
-      }; */
+      };
+
+      if (localStorage.getItem('hasCodeRunBefore') == 'true') {
+        velkommenModal.style.display = 'none';
+        textArea.focus();
+        localStorage.setItem('hasCodeRunBefore', 'true');
+      }
 
       //Definerer quotes som skal brukes
       let sitat_array = [

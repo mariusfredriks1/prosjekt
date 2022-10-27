@@ -1,91 +1,32 @@
+body,
+html {
+  overflow: visible !important;
+}
 /*bildene*/
 .container {
-    position: relative;
-    margin-top: 90px;
-    margin-bottom: 50px;
     border-radius: 30px;
-    margin-left: 30px;
-    margin-right: 30px;
-    
-
-    display: inline-block;
-
+    display: flex;
+    flex-direction: column;
     height: 100%;
- 
     background-color: #596259 !important;
-
-    text-align: center;
-    width: 25%;
-
-    transition: width 1s, height 1s;
     
+    transition-duration: 0.5s;
 }
 
 /*Boksen blir større når musen er over*/
 .container:hover {
-  width: 30%;
-  height: 30%;
+  transform: scale(103%);
   cursor: pointer;
 }
 
-
-
-/* Make the image responsive */
 .container img {
-    width: 100%;
     opacity: 80%;
     box-shadow: 0 10px 10px 0 #888888;
-    border-radius: 30px;
-
-
-    
+    border-radius: 30px;    
 }
 
-/* Display the columns below each other instead of side by side on small screens */
-@media screen and (max-width: 650px) {
-    .column {
-      width: 100%;
-      display: block;
-    }
-  }
+
   
- /*Posisjonen til teksten på bildene*/
-  .centered {
-    position: absolute;
-    
-    font-size: 30px;
-    font-weight: bold;
-
-    top: 30%;
-    left: 50%;
-    transform: translate(-50%,50%);
-  }
-
-
-.right {
-    position: absolute;
-
-    font-size: 30px;
-    font-weight: bold;
-
-    top: 20%;
-    left: 62%;
-    transform: translate(-70%,30%);
-  }
-
-  .left {
-    position: absolute;
-
-    font-size: 30px;
-    font-weight: bold;
-
-    top: 25%;
-    left: 45%;
-    transform: translate(-30%,70%);
-  }
-
-
-
   .overskrift {
     text-align: center;
     padding-top: 30px;
@@ -104,7 +45,22 @@
     font-size: 25px;
 }
 
-.w3-row-padding{
-  display: flex;
-  justify-content: center;
+.row{
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 20px;
+  max-width: 1200px;
+  margin: 10px auto;
+  padding: 20px;
+  
+
+}
+
+/* Display the columns below each other instead of side by side on small screens */
+@media screen and (max-width: 650px) {
+  .row{
+    grid-template-columns: 1fr;
+    overflow: auto !important;
+
+  }
 }

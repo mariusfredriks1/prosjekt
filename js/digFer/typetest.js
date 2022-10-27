@@ -2,6 +2,8 @@
 let sitatRandom;
 //Må også være global så den oppdateres hver gang fyllSitat() kjører
 let id_Arr_Splitted;
+let riktigeTrykk = 0;
+let feilTrykk = 0;
 
 /*Funksjonen generersitat henter ut et tilfeldig sitat fra sitat_array.
  Variablen sitatRandom er en global variabel slik at
@@ -180,7 +182,7 @@ let startTimer = () => {
       tidsgrense--;
       document.getElementById('timer').textContent = tidsgrense;
       if (tidsgrense === 0) {
-      /*.disabled passer på at brukeren ikke får skrevet inn
+        /*.disabled passer på at brukeren ikke får skrevet inn
         mer i textarea etter tiden har gått ut */
         textArea.disabled = true;
         visModal();
@@ -259,9 +261,11 @@ let sjekkSvar = () => {
       input_splitted[i] === id_Arr_Splitted[i][0]
     ) {
       bokstav.classList.add('riktig');
+      riktigeTrykk++;
     } else {
       /*Hvis input er feil legges rød farge til bokstaven */
       bokstav.classList.add('feil');
+      feilTrykk++;
     }
   }
 };
