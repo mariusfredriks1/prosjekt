@@ -47,14 +47,14 @@ let fyllBokstav = () => {
 };
 let modalFerdig = () => {
   modal.style.display = 'block';
-  resultat.innerText = `Bra jobba! Du skrev inn alle bokstavene i alfabetet på  ${
+  modalResultat.innerText = `Bra jobba! Du skrev inn alle bokstavene i alfabetet på  ${
     60 - tidsgrense
   } sekunder ; )`;
 };
 
 let tomForTidModal = () => {
   modal.style.display = 'block';
-  resultat.innerText = `Tiden er ute, du klarte ${poeng} bokstaver på 60 sekunder!`;
+  modalResultat.innerText = `Tiden er ute, du klarte ${poeng} bokstaver på 60 sekunder!`;
 };
 
 //Bruker en boolean til å passe på at startTimer kjører kun en gang, og ikke starter på nytt for hvert input
@@ -114,3 +114,15 @@ let nyBokstav = () => {
   sitat_div.innerText = '';
   fyllBokstav();
 };
+
+
+let fjernVelkomstModal = () => {
+  velkommenModal.style.display = 'none';
+  textArea.focus();
+  sessionStorage.setItem('viseVelkomstModal1_2', 'false');
+};
+
+if (sessionStorage.getItem('viseVelkomstModal1_2') == 'false') {
+  velkommenModal.style.display = 'none';
+  textArea.focus();
+}

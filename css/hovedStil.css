@@ -57,3 +57,19 @@
     margin: 0;
     overflow: hidden;
 }
+
+#tilbakePil{
+  position: absolute;
+  margin: 20px;
+  transition-duration: 0.5s;
+  height: 80px;
+  width: 100px;
+  padding: 10px;
+  background: transparent;
+
+}
+#tilbakePil:hover{
+  cursor: pointer;
+  transform: scale(110%);
+
+}

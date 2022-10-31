@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="/css/navigasjon/valgtTrinn.css" />
-    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/hovedStil.css" />
 
     <link
       rel="stylesheet"
@@ -21,20 +21,27 @@
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
       <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
 
+    <img
+      id="tilbakePil"
+      src="/bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='/html/navigasjon/hjem.html'"
+    />
+
     <script>
-      function myFunction() {
-        var x = document.getElementById('myTopnav');
-        if (x.className === 'topnav') {
-          x.className += ' responsive';
+      let navbarResponsiv = () => {
+        let navbar = document.getElementById('myTopnav');
+        if (navbar.className === 'topnav') {
+          navbar.className += ' responsive';
         } else {
-          x.className = 'topnav';
+          navbar.className = 'topnav';
         }
-      }
+      };
     </script>
     <h2 class="overskrift">For 5.-7. klasse</h2>
 
@@ -71,8 +78,7 @@
           alt="teknologibilde"
           style="width: 100%; height: 100%"
         />
-        
       </div>
-      </div>
+    </div>
   </body>
 </html>

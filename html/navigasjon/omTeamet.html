@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="/css/navigasjon/omTeametStilark.css" />
-    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/hovedStil.css" />
 
     <link
       rel="stylesheet"
@@ -22,20 +22,26 @@
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
       <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
 
+    <img
+      id="tilbakePil"
+      src="/bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='/html/navigasjon/hjem.html'"
+    />
     <script>
-      function myFunction() {
-        var x = document.getElementById('myTopnav');
-        if (x.className === 'topnav') {
-          x.className += ' responsive';
+      let navbarResponsiv = () => {
+        let navbar = document.getElementById('myTopnav');
+        if (navbar.className === 'topnav') {
+          navbar.className += ' responsive';
         } else {
-          x.className = 'topnav';
+          navbar.className = 'topnav';
         }
-      }
+      };
     </script>
 
     <h2 id="overskrift">
@@ -55,7 +61,7 @@
             <p>
               <svg
                 onclick="location.href='https://www.instagram.com/marius_s_fredriksen/'"
-                xmlns="http://www.w3.org/2000/svg"
+                navbarmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -66,7 +72,7 @@
               </svg>
               <svg
                 onclick="location.href='https://www.snapchat.com/add/mariusfredriks1?share_id=QTFDMUYwN0MtNzA0NC00Mjg1LUIxQzQtNjg4ODM5MTBGNEY0&locale=nb_NO&sid=549e9d3641aa49f39d64d3328c3a2f34'"
-                xmlns="http://www.w3.org/2000/svg"
+                navbarmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -99,7 +105,7 @@
             <p>
               <svg
                 onclick="location.href='https://www.instagram.com/breerland/'"
-                xmlns="http://www.w3.org/2000/svg"
+                navbarmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -110,7 +116,7 @@
               </svg>
               <svg
                 onclick="location.href='/bilder/digFer/tihi.html'"
-                xmlns="http://www.w3.org/2000/svg"
+                navbarmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -142,7 +148,7 @@
             <p>
               <svg
                 onclick="location.href='https://www.instagram.com/leamaehlum/'"
-                xmlns="http://www.w3.org/2000/svg"
+                navbarmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -152,7 +158,7 @@
                 /></svg
               ><svg
                 onclick="location.href='https://no.linkedin.com/in/lea-m%C3%A6hlum-285002221?trk=people-guest_people_search-card'"
-                xmlns="http://www.w3.org/2000/svg"
+                navbarmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -184,7 +190,7 @@
             <p>
               <svg
                 onclick="location.href='https://www.instagram.com/harrypotterfilm/'"
-                xmlns="http://www.w3.org/2000/svg"
+                navbarmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
@@ -195,7 +201,7 @@
               </svg>
               <svg
                 onclick="location.href='https://www.wizardingworld.com/'"
-                xmlns="http://www.w3.org/2000/svg"
+                navbarmlns="http://www.w3.org/2000/svg"
                 width="24"
                 height="24"
                 viewBox="0 0 24 24"
