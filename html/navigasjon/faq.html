@@ -4,9 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/hovedStil.css" />
     <link rel="stylesheet" href="/css/navigasjon/faq.css" />
-
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
 
     <title>Ofte stilte spøsmål</title>
@@ -16,61 +19,65 @@
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
       <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
 
+    <img
+      id="tilbakePil"
+      src="/bilder/navigasjon/pil_hvit.jpg"
+      alt="tilbakepil"
+      onclick="location.href='/html/navigasjon/hjem.html'"
+    />
+
     <script>
-      function myFunction() {
-        var x = document.getElementById('myTopnav');
-        if (x.className === 'topnav') {
-          x.className += ' responsive';
+      let navbarResponsiv = () => {
+        let navbar = document.getElementById('myTopnav');
+        if (navbar.className === 'topnav') {
+          navbar.className += ' responsive';
         } else {
-          x.className = 'topnav';
+          navbar.className = 'topnav';
         }
-      }
+      };
     </script>
 
-      <h2>Ofte stilte spørsmål</h2>
-      <div class="faqDiv">
+    <h2>Ofte stilte spørsmål</h2>
+    <div class="faqDiv">
       <div class="spm">
-      <h4>Hva er Just Learn It?</h4>
-      <p>
-        Just Learn It er en lærlingplatform for barn på de første syv trinnene
-        av grunnskolen. Platformen består av tre ulike læringsspill, alle med
-        varierende vanskelighetsnivåer.
-      </p>
+        <h4>Hva er Just Learn It?</h4>
+        <p>
+          Just Learn It er en lærlingplatform for barn på de første syv trinnene
+          av grunnskolen. Platformen består av tre ulike læringsspill, alle med
+          varierende vanskelighetsnivåer.
+        </p>
 
-      <h4>Er det gratis å spille?</h4>
-      <p>
-        Det er helt gratis å spille Just Learn It for alle personer i alle
-        aldre. Du trenger heller ikke å registrere seg som bruker, så det er
-        enkelt å komme i gang.
-      </p>
+        <h4>Er det gratis å spille?</h4>
+        <p>
+          Det er helt gratis å spille Just Learn It for alle personer i alle
+          aldre. Du trenger heller ikke å registrere seg som bruker, så det er
+          enkelt å komme i gang.
+        </p>
 
-      <h4>Kan jeg gjøre oppgaver tildelt andre klassetrinn?</h4>
-      <p>
-        Du kan selv velge hvilke trinn du vil jobbe på, men oppgavene er
-        tilpasset vanskelighetsnivået til de enkelte trinnene.
-      </p>
+        <h4>Kan jeg gjøre oppgaver tildelt andre klassetrinn?</h4>
+        <p>
+          Du kan selv velge hvilke trinn du vil jobbe på, men oppgavene er
+          tilpasset vanskelighetsnivået til de enkelte trinnene.
+        </p>
 
-      <h4>Tilbyr dere noe form for hjelp på oppgavene?</h4>
-      <p>
-        Just Learn It tilbyr dessverre ikke noe hjelp for å løse oppgavene, så
-        vi anbefaler å spørre om hjelp hos foresatte eller lærere hvis det er
-        behov for det.
-      </p>
+        <h4>Tilbyr dere noe form for hjelp på oppgavene?</h4>
+        <p>
+          Just Learn It tilbyr dessverre ikke noe hjelp for å løse oppgavene, så
+          vi anbefaler å spørre om hjelp hos foresatte eller lærere hvis det er
+          behov for det.
+        </p>
 
-      <h4>Hvordan starter jeg spillene under Digitale Ferdigheter?</h4>
-      <p>Ved å begynne å skrive vil spillet automatisk starte.</p>
-
-      <h4>Hvordan vinner jeg?</h4>
-      <p>
-        Ved å øve masse vil du sannsynligvis bli en av de flinkeste i klassen.
-        Det er kunnskapen du får vi mener er den virkelige seieren ; )
-      </p>
-    </div>
+        <h4>Hvordan vinner jeg?</h4>
+        <p>
+          Ved å øve masse vil du sannsynligvis bli en av de flinkeste i klassen.
+          Det er kunnskapen du får vi mener er den virkelige seieren ; )
+        </p>
+      </div>
     </div>
   </body>
 </html>

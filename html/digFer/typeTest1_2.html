@@ -3,9 +3,15 @@
   <head>
     <meta charset="utf-8" />
     <title>Typetest 1-2 klasse</title>
-    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/hovedStil.css" />
     <link rel="stylesheet" href="/css/digFer/typetest1_2.css" />
-    <script src="/js/digFer/typetest1_2.js" defer ></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <script src="/js/digFer/typetest1_2.js" defer></script>
   </head>
 
   <body onload=" fyllBokstav()">
@@ -13,10 +19,18 @@
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
       <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
+
+    <img
+      id="tilbakePil"
+      src="/bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='/html/navigasjon/1_2.html'"
+    />
+
     <div class="tid_poeng">
       <div id="timer">60</div>
       <div id="poeng">
@@ -31,6 +45,8 @@
           oninput="sjekkSvar();startTimer()"
           ;
           id="textArea"
+          onpaste="return false"
+          spellcheck="false"
           autofocus
         ></textarea>
       </div>
@@ -38,18 +54,12 @@
 
     <div class="knapper">
       <button id="restart" onclick="window.location.reload();">Omstart</button>
-      <button
-        id="tilbakeKnapp"
-        onclick="location.href='/html/navigasjon/1_2.html'"
-      >
-        Tilbake
-      </button>
     </div>
-    
+
     <div id="modal" class="modal">
       <!-- Modal content -->
       <div class="modal-content">
-        <p id="resultat"></p>
+        <p id="modalResultat"></p>
         <div>
           <button class="modalKnapper" onclick="window.location.reload();">
             Prøv en gang til
@@ -63,17 +73,36 @@
         </div>
       </div>
     </div>
+
+    <div id="velkommenModal" class="velkommenModal">
+      <div class="modal-content">
+        <p id="modalTekst">
+          Velkommen til Digitale Ferdigheter for 1. -2. trinn! Her skal du
+          skrive inn alle bokstavene i alfabetet. Spillet starter når du
+          begynner å skrive. Er du klar?
+        </p>
+        <div>
+          <button class="modalKnapper" onclick="fjernVelkomstModal()">
+            Start spill!
+          </button>
+          <button
+            class="modalKnapper"
+            onclick="location.href='/html/navigasjon/5_7.html'"
+          >
+            Nei, tilbake
+          </button>
+        </div>
+      </div>
+    </div>
     <script>
-      function myFunction() {
-        var x = document.getElementById('myTopnav');
-        if (x.className === 'topnav') {
-          x.className += ' responsive';
+      let navbarResponsiv = () => {
+        let navbar = document.getElementById('myTopnav');
+        if (navbar.className === 'topnav') {
+          navbar.className += ' responsive';
         } else {
-          x.className = 'topnav';
+          navbar.className = 'topnav';
         }
-      }
+      };
     </script>
-
-
   </body>
 </html>

@@ -3,8 +3,14 @@
   <head>
     <meta charset="utf-8" />
     <title>Typetest 5-7 klasse</title>
-    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/hovedStil.css" />
     <link rel="stylesheet" href="/css/digFer/typetest5_7.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
     <script src="/js/digFer/typetest.js" defer></script>
   </head>
 
@@ -13,10 +19,17 @@
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
       <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
+
+    <img
+      id="tilbakePil"
+      src="/bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='/html/navigasjon/5_7.html'"
+    />
 
     <div class="tid_poeng">
       <div id="timer">60</div>
@@ -27,31 +40,27 @@
     </div>
     <div class="skriveTest">
       <div id="sitatet" class="sitatet"></div>
-      <div class="textAreaDiv">
-        <textarea
-          oninput="sjekkSvar();startTimer()"
-          ;
-          id="textArea"
-          onpaste="return false"
-          autofocus
-        ></textarea>
-      </div>
+      <textarea
+        oninput="sjekkSvar();startTimer()"
+        ;
+        id="textArea"
+        onpaste="return false"
+        spellcheck="false"
+      ></textarea>
     </div>
 
     <div class="knapper">
       <button id="restart" onclick="window.location.reload();">Omstart</button>
-      <button
-        id="tilbakeKnapp"
-        onclick="location.href='/html/navigasjon/5_7.html'"
-      >
-        Tilbake
-      </button>
     </div>
 
     <div id="modal" class="modal">
-      <!-- Modal content -->
       <div class="modal-content">
-        <p id="resultat"></p>
+        <p id="modalResultat"></p>
+        <ul id="modalListe">
+          <li id="liPoeng"></li>
+          <li id="liNoyaktighet"></li>
+          <li id="liWpm"></li>
+        </ul>
         <div>
           <button class="modalKnapper" onclick="window.location.reload();">
             Prøv en gang til
@@ -65,29 +74,60 @@
         </div>
       </div>
     </div>
+    <!-- VelkomstModal som bare vises første gang nettleseren åpner siden -->
+    <div id="velkommenModal" class="velkommenModal">
+      <div class="modal-content">
+        <p id="modalTekst">
+          Velkommen til Digitale Ferdigheter for 5. -7. trinn! Her skal du
+          skrive inn setningen så fort du kan. Spillet starter automatisk når du
+          begynner å skrive. Er du klar?
+        </p>
+        <div>
+          <button class="modalKnapper" onclick="fjernVelkomstModal()">
+            Start spill!
+          </button>
+          <button
+            class="modalKnapper"
+            onclick="location.href='/html/navigasjon/5_7.html'"
+          >
+            Nei, tilbake
+          </button>
+        </div>
+      </div>
+    </div>
 
     <script>
-      function myFunction() {
-        var x = document.getElementById('myTopnav');
-        if (x.className === 'topnav') {
-          x.className += ' responsive';
+      let navbarResponsiv = () => {
+        let navbar = document.getElementById('myTopnav');
+        if (navbar.className === 'topnav') {
+          navbar.className += ' responsive';
         } else {
-          x.className = 'topnav';
+          navbar.className = 'topnav';
         }
-      }
+      };
     </script>
     <script>
       //Modal som viser resultatet
-      function visModal() {
+      let visModal = () => {
         modal.style.display = 'block';
         if (poeng === 0) {
-          resultat.innerText = `Du fikk dessverre ${poeng} poeng, øvelse gjør mester : )`;
+          modalResultat.innerText = `Øvelse gjør mester ; )`;
+          liPoeng.innerText = `Antall poeng: ${poeng}`;
+          liNoyaktighet.innerText = `Nøyaktighet: ${noyaktighet}%`;
+          liWpm.innerText = `Antall ord i minuttet: ${wpm}`;
         } else if (poeng < 5) {
-          resultat.innerText = `Bra innsats, du fikk ${poeng} poeng!`;
+          modalResultat.innerText = `Bra jobbet!`;
+          liPoeng.innerText = `Antall poeng: ${poeng}`;
+          liNoyaktighet.innerText = `Nøyaktighet: ${noyaktighet}%`;
+          liWpm.innerText = `Ord i minuttet: ${wpm}`;
         } else {
-          resultat.innerText = `Veldig bra jobbet, du fikk ${poeng} poeng!`;
+          modalResultat.innerText = `Veldig bra jobbet!`;
+          liPoeng.innerText = `Antall poeng: ${poeng}`;
+          liNoyaktighet.innerText = `Nøyaktighet: ${noyaktighet}%`;
+          liWpm.innerText = `Ord i minuttet: ${wpm}`;
         }
-      }
+      };
+
       //Definerer quotes som skal brukes
       let sitat_array = [
         'gresset er grønnere på andre siden av gjerdet',

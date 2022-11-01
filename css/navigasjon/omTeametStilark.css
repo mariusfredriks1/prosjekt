@@ -5,13 +5,14 @@ html {
 /* Create four equal columns that floats next to each other */
 .column {
   float: left;
-  width: 22%;
+  width: 20%;
+  margin-left: 2.5%;
   padding: 20px;
   background-color: #aee4ad !important;
 }
 .row {
-  margin-left: 12%;
   position: relative;
+  margin-left: 7% !important;
 }
 /* Clear floats after the columns */
 .container::after,
@@ -38,7 +39,7 @@ html {
 /* Add some shadows to create a card effect */
 .card {
   box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-  background-color: #93db92;
+  background-color: #93db93;
   border: 5px ridge black;
   border-radius: 10px;
   text-align: center;
@@ -51,14 +52,9 @@ html {
 
 .button {
   padding: 5px;
-
   color: white;
-  background-color: rgb(11, 11, 11);
-  border: black;
-  border-style: solid;
-  border-width: 3px;
+  background-color: black;
   border-radius: 10px;
-
   text-align: center;
   cursor: pointer;
   width: 94%;
@@ -67,7 +63,7 @@ html {
 #overskrift {
   text-align: center;
   padding-top: 30px;
-  padding-bottom: 50px;
+  padding-bottom: 30px;
   color: #6563dc;
   font-weight: 1000;
   font-size: 35px;

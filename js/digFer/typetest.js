@@ -1,37 +1,37 @@
-//Lager variabel som tilfeldig velger en quote
+//Globale variabler
 let sitatRandom;
-let id_Arr_Splitted = 0;
+let id_Arr_Splitted;
 
-function genererSitat() {
+let bokstaverSkrevet = 0;
+let feilTrykk = 0;
+
+let genererSitat = () => {
   let randomTall = Math.floor(Math.random() * sitat_array.length);
   sitatRandom = sitat_array[randomTall];
   sitat_array.splice(randomTall, 1);
-  console.log(sitat_array);
+  console.log('sitat_array', sitat_array);
 
   let sitat_splitted = sitatRandom.split('');
   let id_Arr = [];
 
-  // Zip higher order function
-  const zip = (sitat_splitted, id_Arr) =>
+  let zip = (sitat_splitted, id_Arr) =>
     sitat_splitted.map((x, i) => [x, id_Arr[i]]);
 
-  //For løkke for å gi id_Arr id "elementer"
   for (let i = 0; i < sitat_splitted.length; i++) {
-    //Genererer id'er basert på index
-    const id = i;
+    let id = i;
     id_Arr.push(id);
   }
-  //Forklaring kommer
+
   id_Arr_Splitted = zip(sitat_splitted, id_Arr);
 
-    console.log(sitat_splitted);
-  console.log(id_Arr)
-  console.log(id_Arr_Splitted);
-}
+  console.log('sitat_splitted', sitat_splitted);
+  console.log('id_Arr', id_Arr);
+  console.log('id_Arr_Splitted', id_Arr_Splitted);
+};
 
-const sitat_div = document.getElementById('sitatet');
-//Funksjon som fyller inn sitatet
-function fyllSitat() {
+let sitat_div = document.getElementById('sitatet');
+
+let fyllSitat = () => {
   genererSitat();
 
   for (let i = 0; i < id_Arr_Splitted.length; i++) {
@@ -40,90 +40,83 @@ function fyllSitat() {
     new_span.innerText = `${id_Arr_Splitted[i][0]}`;
     sitat_div.appendChild(new_span);
   }
-}
+};
 
-//Bruker en boolean til å passe på at startTimer kjører kun en gang, og ikke starter på nytt for hvert input
 let started = false;
-//Starte nedtelling
-function startTimer() {
-  if (!started) {
-    //Definerer tidsgrense
-    timer = window.setTimeout(() => {}, 60000);
 
-    let tidsgrense = 60;
-    let nedtelling = setInterval(function () {
+let startTimer = () => {
+  if (!started) {
+    let tidsgrense = 10;
+    let nedtelling = setInterval(() => {
       tidsgrense--;
       document.getElementById('timer').textContent = tidsgrense;
       if (tidsgrense === 0) {
+        textArea.disabled = true;
         visModal();
-
         clearInterval(nedtelling);
       }
     }, 1000);
   }
   started = true;
-}
+};
 
-//Lager en variabel for textarea/inputfeltet
 let input = document.getElementById('textArea');
 
-//Variabler for poeng
 let poeng = 0;
 let poengTekst = document.getElementById('poengTekst');
 poengTekst.innerText = poeng;
 
-let feil = 0;
-//?????
-let ulikeFeil = [];
+let sjekkSvar = () => {
+  bokstaverSkrevet++;
 
-function sjekkSvar() {
-  //Sjekke om input er  100% riktig,
-  //i så fall hente ut nytt sitat fra array
   if (input.value === sitatRandom) {
     poeng++;
     document.getElementById('poengTekst').innerText = poeng;
     nyttSitat();
   }
-  //Splitter strengen fra input feltet
-  const input_splitted = input.value.split('');
-  //Hvis brukeren skriver inn feil, og deretter for mye tekst,
-  //gir denne løkken brukeren et nytt sitat
+
+  let input_splitted = input.value.split('');
+
   for (let i = 0; i < input_splitted.length + 1; i++) {
-    if (i >= id_Arr_Splitted.length) {
-      nyttSitat();
-    }
+    if (i >= id_Arr_Splitted.length) nyttSitat();
 
-    //Sjekke bokstav for bokstav om brukerinput er riktig.
-    const bokstav = document.getElementById(id_Arr_Splitted[i][1]);
-    //?????
-    ulikeFeil.push(bokstav);
+    let bokstav = document.getElementById(id_Arr_Splitted[i][1]);
 
-    //Skal fjerne farger hvis man skriver feil
     if (input_splitted[i] == null) {
       bokstav.classList.remove('riktig');
       bokstav.classList.remove('feil');
     } else if (input_splitted[i] === id_Arr_Splitted[i][0]) {
       bokstav.classList.add('riktig');
-      bokstav.classList.remove('feil');
     } else {
       bokstav.classList.add('feil');
-      bokstav.classList.remove('riktig');
+
+      feilTrykk++;
     }
   }
 
-  //?????
-  for (let bokstav of ulikeFeil) {
-    if (bokstav.classList.contains('feil')) {
-      feil++;
-    }
-  }
-}
-//??????
-console.log(ulikeFeil);
+  console.log('Feil', feilTrykk);
+  console.log('Antall', bokstaverSkrevet);
+  console.log('Nøyaktighet', noyaktighet);
+  console.log('wpm', bokstaverSkrevet / 4.7);
+};
+//???????
+let noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
+//????
+let wpm = Math.round(bokstaverSkrevet / 4.7);
 
-//Henter nytt sitat til brukeren
-function nyttSitat() {
+let nyttSitat = () => {
   textArea.value = null;
   sitat_div.innerText = '';
   fyllSitat();
+};
+
+let fjernVelkomstModal = () => {
+  velkommenModal.style.display = 'none';
+  textArea.focus();
+  sessionStorage.setItem('viseVelkomstModal', 'false');
+};
+
+if (sessionStorage.getItem('viseVelkomstModal') == 'false') {
+  velkommenModal.style.display = 'none';
+  textArea.focus();
 }

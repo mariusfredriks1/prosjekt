@@ -31,21 +31,20 @@
 /* Området i grått. Div'en som omslutter .sitat og #textArea */
 
 .skriveTest{
-   background-color: rgb(130, 121, 121);
+   background-color: white;
    border: 7px solid #6563DC;
    border-radius: 1rem;
-   width: 50%;
-   margin-left: 25%;
-   margin-top: 1.5rem;
-
-   
+   width: 30%;
+   margin-left: 35%;
+   margin-top: 1.5rem;   
 }
+
+
 /* Div rundt textArea */
 .textAreaDiv{
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
-
 }
 /* Feltet brukeren skriver inn i */
 
@@ -63,9 +62,6 @@
   font-size: 5rem;
   font-family: Sans-Serif;
   text-align: center;
-
-   
-
 }
 
 /* Klasse som settes til bokstav hvis input stemmer */
@@ -87,10 +83,10 @@
   margin-top: 10px;
 }
 
-#tilbakeKnapp, #restart{
+#restart{
   border: 5px solid #6563DC;
   border-radius: 5px ;
-  background-color: rgb(130, 121, 121);
+  background-color: white;
   color: black;
   font-size: 24px;
   width: 160px;
@@ -98,6 +94,7 @@
   margin: 5px;
   cursor: pointer;
 }
+
 .modal {
   top: 0%;
   left: 0%;
@@ -135,13 +132,30 @@
   color: black;
   font-size: 24px;
   width: 160px;
-  height: 70px;
+  height: 80px;
   margin: 5px;
   cursor: pointer;
   
 }
 
-.modal #resultat{
+#modalResultat, #modalTekst{
   font-size: 25px;
   font-weight: bold;
+}
+
+.velkommenModal {
+  top: 0%;
+  left: 0%;
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  display: block; /* Hidden by default */
+  position: fixed; /* Stay in place */
+  z-index: 1; /* Sit on top */
+  padding-top: 100px; /* Location of the box */
+  backdrop-filter: blur(4px);
+  width: 100%; /* Full width */
+  height: 100%; /* Full height */
+  
 }

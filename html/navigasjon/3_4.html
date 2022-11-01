@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <link rel="stylesheet" href="/css/navigasjon/valgtTrinn.css" />
-    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/hovedStil.css" />
 
     <link
       rel="stylesheet"
@@ -21,66 +21,64 @@
       <a href="/html/navigasjon/hjem.html">Hjem</a>
       <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
       <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-      <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+      <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
     </div>
 
+    <img
+      id="tilbakePil"
+      src="/bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='/html/navigasjon/hjem.html'"
+    />
+
     <script>
-      function myFunction() {
-        var x = document.getElementById('myTopnav');
-        if (x.className === 'topnav') {
-          x.className += ' responsive';
+      let navbarResponsiv = () => {
+        let navbar = document.getElementById('myTopnav');
+        if (navbar.className === 'topnav') {
+          navbar.className += ' responsive';
         } else {
-          x.className = 'topnav';
+          navbar.className = 'topnav';
         }
-      }
+      };
     </script>
     <h2 class="overskrift">For 3.-4. klasse</h2>
 
     <h3 class="underOverskrift">Velg et fag!</h3>
 
-    <div class="w3-row-padding">
+    <div class="row">
       <div
         class="container"
-        onclick="location.href='/html/matte/navigasjon/matteTF.html'"
+        onclick="location.href='/html/matte/matte3_4.html'"
       >
-        <script src="button.js"></script>
         <img
           src="/bilder/navigasjon/matte.jpg"
           alt="mattebilde"
           style="width: 100%; height: 100%"
         />
-        <div class="left">Matte</div>
       </div>
 
       <div
         class="container"
-        onclick="location.href='/html/engelsk/navigasjon/engelskTF.html'"
+        onclick="location.href='/html/engelsk/engelsk3_4.html'"
       >
-        <script src="button.js"></script>
         <img
           src="/bilder/navigasjon/engelsk.jpg"
           alt="engelskbilde"
           style="width: 100%; height: 100%"
         />
-        <div class="centered">Engelsk</div>
       </div>
 
       <div
         class="container"
-        onclick="location.href='/html/digFer/navigasjon/digitaleFerdigheterTF.html'"
+        onclick="location.href='/html/digFer/typeTest3_4.html'"
       >
-        <script src="button.js"></script>
         <img
           src="/bilder/navigasjon/teknologi.jpg"
           alt="teknologibilde"
           style="width: 100%; height: 100%"
         />
-        <div class="right">
-          Digitale <br />
-          ferdigheter
-        </div>
       </div>
     </div>
   </body>

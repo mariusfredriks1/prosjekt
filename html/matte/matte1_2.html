@@ -5,13 +5,19 @@
     <title>Mattegøy 1-2</title>
     <link rel="stylesheet" href="/css/matte/matte1_2.css ">
     <script src="/js/matte/matte12.js" defer></script>
-    <link rel="stylesheet" href="/css/navbar.css" />
+    <link rel="stylesheet" href="/css/hovedStil.css" />
     <link
       rel="stylesheet"
-      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+   <!--  <link
+      rel="stylesheet"
+      href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
+    /> -->
+    <!-- <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script> -->
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
   </head>
 
 </head>
@@ -21,18 +27,18 @@
     <a href="/html/navigasjon/hjem.html">Hjem</a>
     <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
     <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+    <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
       <i class="fa fa-bars"></i>
     </a>
   </div>
 
   <script>
-    function myFunction() {
-      var x = document.getElementById('myTopnav');
-      if (x.className === 'topnav') {
-        x.className += ' responsive';
+    let navbarResponsiv = () => {
+      let navbar = document.getElementById('myTopnav');
+      if(navbar.className === 'topnav') {
+       navbar.className += ' responsive';
       } else {
-        x.className = 'topnav';
+       navbar.className = 'topnav';
       }
     }
   </script>

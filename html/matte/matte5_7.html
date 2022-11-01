@@ -1,73 +1,74 @@
 <html>
   <head>
-    <meta charset="utf-8">
+    <meta charset="utf-8" />
     <title>Mattegøy for 5. til 7. trinn</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-    <link rel="stylesheet" href="/css/navbar.css" />
-    <link rel="stylesheet" href="/css/matte/matte3_4.css ">
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"> -->
+    <link rel="stylesheet" href="/css/hovedStil.css" />
+    <link rel="stylesheet" href="/css/matte/matte3_4.css " />
     <script src="/js/matte/matte5_7.js" defer></script>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+    />
 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   </head>
 
   <body onload="tekstgange()">
-   
-  <div class="topnav" id="myTopnav">
-    <a href="/html/navigasjon/hjem.html">Hjem</a>
-    <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
-    <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
-    <a href="javascript:void(0);" class="icon" onclick="myFunction()">
-      <i class="fa fa-bars"></i>
-    </a>
-  </div>
+    <div class="topnav" id="myTopnav">
+      <a href="/html/navigasjon/hjem.html">Hjem</a>
+      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
+        <i class="fa fa-bars"></i>
+      </a>
+    </div>
 
-  <script>
-    function myFunction() {
-      var x = document.getElementById('myTopnav');
-      if (x.className === 'topnav') {
-        x.className += ' responsive';
-      } else {
-        x.className = 'topnav';
-      }
-    }
-  </script>
+    <script>
+      let navbarResponsiv = () => {
+        let navbar = document.getElementById('myTopnav');
+        if (navbar.className === 'topnav') {
+          navbar.className += ' responsive';
+        } else {
+          navbar.className = 'topnav';
+        }
+      };
+    </script>
     <div class="flex-container" href="#">
-      <div class="flex-childfrukt1" id ="flex-childfrukt1" href="#" onload="random()" alt="frukt"> </div>
-      <div class="flex-childplus" href="#"> x </div> 
-            <div class="flex-childfrukt2" id ="flex-childfrukt2" href="#" >  </div>
-      <div class="flex-childequals" href="#"> = </div>
-   </div>
+      <div
+        class="flex-childfrukt1"
+        id="flex-childfrukt1"
+        href="#"
+        onload="random()"
+        alt="frukt"
+      ></div>
+      <div class="flex-childplus" href="#">x</div>
+      <div class="flex-childfrukt2" id="flex-childfrukt2" href="#"></div>
+      <div class="flex-childequals" href="#">=</div>
+    </div>
 
-      <!--Grid med svaralt-->
+    <!--Grid med svaralt-->
     <div class="flex-containerKnapper" href="#">
-      
-      <div class="flex-childAlt1" href="#" alt="svar1"> 
-        <button id="alt1"> </button>
+      <div class="flex-childAlt1" href="#" alt="svar1">
+        <button id="alt1"></button>
       </div>
       <div class="flex-childAlt2" href="#" alt="svar2">
-        <button id="alt2"> </button>
+        <button id="alt2"></button>
       </div>
 
       <!---<div class="flex-childalt3" href="#" alt="svar1"> 
         <button id="alt3"></button> </div>--->
-      
-     </div>
-
-     <!-- The Modal -->
-    <div id="modal" class="modal">
-
-    <!-- Modal content -->
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <p>Helt riktig! Trykk "X" for å gå videre</p>
     </div>
 
-  </div>
-
-    
-
-    
-</body>
+    <!-- The Modal -->
+    <div id="modal" class="modal">
+      <!-- Modal content -->
+      <div class="modal-content">
+        <span class="close">&times;</span>
+        <p>Helt riktig! Trykk "X" for å gå videre</p>
+      </div>
+    </div>
+  </body>
+</html>
