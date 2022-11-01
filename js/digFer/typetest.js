@@ -4,12 +4,14 @@ let id_Arr_Splitted;
 
 let bokstaverSkrevet = 0;
 let feilTrykk = 0;
+let noyaktighet = 100;
+let wpm = 0;
 
 let genererSitat = () => {
   let randomTall = Math.floor(Math.random() * sitat_array.length);
   sitatRandom = sitat_array[randomTall];
   sitat_array.splice(randomTall, 1);
-  console.log('sitat_array', sitat_array);
+  //console.log('sitat_array', sitat_array);
 
   let sitat_splitted = sitatRandom.split('');
   let id_Arr = [];
@@ -24,9 +26,9 @@ let genererSitat = () => {
 
   id_Arr_Splitted = zip(sitat_splitted, id_Arr);
 
-  console.log('sitat_splitted', sitat_splitted);
+  /* console.log('sitat_splitted', sitat_splitted);
   console.log('id_Arr', id_Arr);
-  console.log('id_Arr_Splitted', id_Arr_Splitted);
+  console.log('id_Arr_Splitted', id_Arr_Splitted); */
 };
 
 let sitat_div = document.getElementById('sitatet');
@@ -89,20 +91,17 @@ let sjekkSvar = () => {
       bokstav.classList.add('riktig');
     } else {
       bokstav.classList.add('feil');
-
       feilTrykk++;
     }
   }
+  noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
 
   console.log('Feil', feilTrykk);
-  console.log('Antall', bokstaverSkrevet);
   console.log('Nøyaktighet', noyaktighet);
-  console.log('wpm', bokstaverSkrevet / 4.7);
+  wpm = Math.round(bokstaverSkrevet / 4.7);
+
 };
-//???????
-let noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
-//????
-let wpm = Math.round(bokstaverSkrevet / 4.7);
+
 
 let nyttSitat = () => {
   textArea.value = null;

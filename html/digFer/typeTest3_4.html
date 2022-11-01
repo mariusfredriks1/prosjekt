@@ -13,6 +13,16 @@
 
     <script src="/js/digFer/typetest.js" defer></script>
   </head>
+  <script>
+    let navbarResponsiv = () => {
+      let navbar = document.getElementById('myTopnav');
+      if (navbar.className === 'topnav') {
+        navbar.className += ' responsive';
+      } else {
+        navbar.className = 'topnav';
+      }
+    };
+  </script>
 
   <body onload="fyllSitat()">
     <div class="topnav" id="myTopnav">
@@ -60,7 +70,6 @@
         <ul id="modalListe">
           <li id="liPoeng"></li>
           <li id="liNoyaktighet"></li>
-          <li id="liWpm"></li>
         </ul>
         <div>
           <button class="modalKnapper" onclick="window.location.reload();">
@@ -98,16 +107,6 @@
     </div>
 
     <script>
-      let navbarResponsiv = () => {
-        let navbar = document.getElementById('myTopnav');
-        if (navbar.className === 'topnav') {
-          navbar.className += ' responsive';
-        } else {
-          navbar.className = 'topnav';
-        }
-      };
-    </script>
-    <script>
       //Modal som viser resultatet
       let visModal = () => {
         modal.style.display = 'block';
@@ -115,17 +114,14 @@
           modalResultat.innerText = `Øvelse gjør mester ; )`;
           liPoeng.innerText = `Antall poeng: ${poeng}`;
           liNoyaktighet.innerText = `Nøyaktighet: ${noyaktighet}%`;
-          liWpm.innerText = `Antall ord i minuttet: ${wpm}`;
         } else if (poeng < 25) {
           modalResultat.innerText = `Bra jobbet!`;
           liPoeng.innerText = `Antall poeng: ${poeng}`;
           liNoyaktighet.innerText = `Nøyaktighet: ${noyaktighet}%`;
-          liWpm.innerText = `Ord i minuttet: ${wpm}`;
         } else {
           modalResultat.innerText = `Veldig bra jobbet!`;
           liPoeng.innerText = `Antall poeng: ${poeng}`;
           liNoyaktighet.innerText = `Nøyaktighet: ${noyaktighet}%`;
-          liWpm.innerText = `Ord i minuttet: ${wpm}`;
         }
       };
 

@@ -148,7 +148,7 @@
     list-style-position: inside;
 
   }
-  #liPoeng, #liNoyaktighet, #liWpm{
+  #liPoeng, #liNoyaktighet{
     text-align: center;
     font-size: 20px;
     font-weight: bold;
