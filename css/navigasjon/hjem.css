@@ -8,7 +8,7 @@ html {
     display: flex;
     flex-direction: column;
     height: 100%;
-    background-color: #AEE4AD !important;
+    background-color: transparent !important;
     transition-duration: 0.5s;
     text-align: center;
 }

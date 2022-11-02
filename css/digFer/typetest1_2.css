@@ -1,4 +1,7 @@
-
+body,
+html {
+  overflow: auto !important;
+}
 /* Nedtelling og poeng */
 
 .tid_poeng{
@@ -37,6 +40,12 @@
    width: 30%;
    margin-left: 35%;
    margin-top: 1.5rem;   
+}
+@media screen and (max-width: 650px) {
+  .skriveTest{
+      width: 50%;
+      margin-left: 25%;
+  }
 }
 
 

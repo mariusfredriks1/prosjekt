@@ -4,13 +4,14 @@
     <meta charset="utf-8" />
     <title>Typetest 5-7 klasse</title>
     <link rel="stylesheet" href="/css/hovedStil.css" />
-    <link rel="stylesheet" href="/css/digFer/typetest.css" />
-    <script src="/js/engelsk/engelsk5_7.js" defer></script>
+    <link rel="stylesheet" href="/css/engelsk/engelsk5_7.css" />
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
     />
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
+
+    <script src="/js/engelsk/engelsk5_7.js" defer></script>
   </head>
 
   <body onload="fyllSitat()">
@@ -23,29 +24,74 @@
       </a>
     </div>
 
+    <img
+      id="tilbakePil"
+      src="/bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='/html/navigasjon/5_7.html'"
+    />
+
     <div class="tid_poeng">
       <div id="timer">60</div>
-      <div id="poeng">Points:</div>
-      <div id="poengTekst"></div>
+      <div id="poeng">
+        Points:
+        <p id="poengTekst"></p>
+      </div>
     </div>
     <div class="skriveTest">
       <div id="sitatet" class="sitatet"></div>
-
       <textarea
         oninput="sjekkSvar();startTimer()"
         ;
         id="textArea"
-        autofocus
+        onpaste="return false"
+        spellcheck="false"
       ></textarea>
     </div>
+
     <div class="knapper">
-      <button id="restart" onclick="window.location.reload();">Omstart</button>
-      <button
-        id="tilbakeKnapp"
-        onclick="location.href='/html/navigasjon/5_7.html'"
-      >
-        Tilbake
-      </button>
+      <button id="restart" onclick="window.location.reload();">Restart</button>
+    </div>
+
+    <div id="modal" class="modal">
+      <div class="modal-content">
+        <p id="modalResultat"></p>
+        <ul id="modalListe">
+          <li id="liPoeng"></li>
+          <li id="liNoyaktighet"></li>
+        </ul>
+        <div>
+          <button class="modalKnapper" onclick="window.location.reload();">
+           Try again!
+          </button>
+          <button
+            class="modalKnapper"
+            onclick="location.href='/html/navigasjon/5_7.html'"
+          >
+            Menu
+          </button>
+        </div>
+      </div>
+    </div>
+    
+    <!-- VelkomstModal som bare vises første gang nettleseren åpner siden -->
+    <div id="velkommenModal" class="velkommenModal">
+      <div class="modal-content">
+        <p id="modalTekst">
+          Welcome to english for 5th - 7th grade! Your task is to write simple english sentences. The game automatically starts when you start typing. Are you ready?
+        </p>
+        <div>
+          <button class="modalKnapper" onclick="fjernVelkomstModal()">
+            Start!
+          </button>
+          <button
+            class="modalKnapper"
+            onclick="location.href='/html/navigasjon/5_7.html'"
+          >
+            Back
+          </button>
+        </div>
+      </div>
     </div>
 
     <script>
@@ -57,37 +103,26 @@
           navbar.className = 'topnav';
         }
       };
-
-      //Definerer quotes som skal brukes
-      let sitat_array = [
-        'bilen er blå',
-        'toget var forsinket',
-        'vinteren kommer',
-        'hun har brunt hår',
-        'katten er hvit',
-        'hun åpnet døren',
-        'jeg kjøpte en ny pc',
-        'vi spilte fotball',
-        'de løp i skogen',
-        'jeg så en film',
-        'liker du epler',
-        'jeg elsker deg',
-      ];
-
-      let sitat_array_engelsk = [
-        'the car is blue',
-        'the train was late',
-        'winter is coming',
-        'she has brown hair',
-        'the cat is white',
-        'she opened the door',
-        'i bought a new pc',
-        'we played fotball',
-        'they ran in the forest',
-        'i watched a movie',
-        'do you like apples',
-        'i love you',
-      ];
+    </script>
+    <script>
+      //Modal som viser resultatet
+      let visModal = () => {
+        modal.style.display = 'block';
+        if (poeng === 0) {
+          modalResultat.innerText = `Practice makes perfect ; )`;
+          liPoeng.innerText = `Points: ${poeng}`;
+          liNoyaktighet.innerText = `Accuracy: ${noyaktighet}%`;
+        } else if (poeng < 5) {
+          modalResultat.innerText = `Well done!`;
+          liPoeng.innerText = `Points: ${poeng}`;
+          liNoyaktighet.innerText = `Accuracy: ${noyaktighet}%`;
+        } else {
+          modalResultat.innerText = `Veldig bra jobbet!`;
+          liPoeng.innerText = `Points: ${poeng}`;
+          liNoyaktighet.innerText = `Accuracy: ${noyaktighet}%`;
+        }
+      };
+    
     </script>
   </body>
 </html>

@@ -1,4 +1,7 @@
-
+body,
+html {
+  overflow: auto !important;
+}
 /* Nedtelling og poeng */
 
 .tid_poeng{
@@ -41,10 +44,14 @@
      width: 34%;
      margin-left: 33%;
      margin-top: 1.5rem;
-     text-align: center;
-
-     
+     text-align: center; 
  }
+ @media screen and (max-width: 650px) {
+  .skriveTest{
+      width: 80%;
+      margin-left: 10%;
+  }
+}
  /* Div rundt textArea */
  
 /* Feltet brukeren skriver inn i */

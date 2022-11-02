@@ -44,7 +44,7 @@ let started = false;
 
 let startTimer = () => {
   if (!started) {
-    let tidsgrense = 10;
+    let tidsgrense = 60;
     let nedtelling = setInterval(() => {
       tidsgrense--;
       document.getElementById('timer').textContent = tidsgrense;
@@ -64,40 +64,89 @@ let poeng = 0;
 let poengTekst = document.getElementById('poengTekst');
 poengTekst.innerText = poeng;
 
+// let sjekkSvar = () => {
+//   bokstaverSkrevet++;
+//   if (input.value === sitatRandom) {
+//     poeng++;
+//     document.getElementById('poengTekst').innerText = poeng;
+//     nyttSitat();
+//   }
+
+//   let input_splitted = input.value.split('');
+
+//   for (let i = 0; i < input_splitted.length + 1; i++) {
+//     j = i;
+//     if (i >= id_Arr_Splitted.length) nyttSitat();
+
+//     let bokstav = document.getElementById(id_Arr_Splitted[i][1]);
+//     console.log(bokstav)
+
+//     if (input_splitted[i] == null) {
+//       bokstav.classList.remove('riktig');
+//       bokstav.classList.remove('feil');
+//     } else if (input_splitted[i] === id_Arr_Splitted[i][0]) {
+//       bokstav.classList.add('riktig');
+//     } else {
+//       bokstav.classList.add('feil');
+//       feilTrykk++;
+//       break;
+//     }
+
+//   }
+
+//   noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
+
+//   // console.log('Feil', feilTrykk);
+//   // console.log('Nøyaktighet', noyaktighet);
+//   wpm = Math.round(bokstaverSkrevet / 4.7);
+// };
+
+let spanBeholder = [];
+let bokstavIndeks = 0;
 let sjekkSvar = () => {
   bokstaverSkrevet++;
+
+  let input_splitted = input.value.split('');
+  let bokstav = input_splitted[bokstavIndeks];
+  if (bokstavIndeks == id_Arr_Splitted.length) bokstavIndeks--;
+  let spanBokstav = document.getElementById(id_Arr_Splitted[bokstavIndeks][1]);
+
+  if (bokstav === spanBokstav.innerHTML) {
+    spanBokstav.classList.add('riktig');
+    spanBeholder.push(spanBokstav);
+    bokstavIndeks++;
+  } else if (input_splitted[bokstavIndeks] == null) {
+    bokstavIndeks--;
+    // console.log(spanBeholder.length)
+    if (spanBeholder.length > 0) {
+      spanBeholder[spanBeholder.length - 1].classList.remove('riktig');
+      spanBeholder[spanBeholder.length - 1].classList.remove('feil');
+    } else {
+      spanBeholder[spanBeholder.length].classList.remove('riktig');
+      spanBeholder[spanBeholder.length].classList.remove('feil');
+    }
+    spanBeholder.pop();
+  } else {
+    spanBokstav.classList.add('feil');
+    feilTrykk++;
+    spanBeholder.push(spanBokstav);
+    bokstavIndeks++;
+  }
 
   if (input.value === sitatRandom) {
     poeng++;
     document.getElementById('poengTekst').innerText = poeng;
     nyttSitat();
   }
-
-  let input_splitted = input.value.split('');
-
-  for (let i = 0; i < input_splitted.length + 1; i++) {
-    if (i >= id_Arr_Splitted.length) nyttSitat();
-
-    let bokstav = document.getElementById(id_Arr_Splitted[i][1]);
-
-    if (input_splitted[i] == null) {
-      bokstav.classList.remove('riktig');
-      bokstav.classList.remove('feil');
-    } else if (input_splitted[i] === id_Arr_Splitted[i][0]) {
-      bokstav.classList.add('riktig');
-    } else {
-      bokstav.classList.add('feil');
-      feilTrykk++;
-    }
-  }
+  console.log(noyaktighet);
+  console.log(wpm);
   noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
-
-  console.log('Feil', feilTrykk);
-  console.log('Nøyaktighet', noyaktighet);
   wpm = Math.round(bokstaverSkrevet / 4.7);
 };
 
 let nyttSitat = () => {
+  spanBeholder = [];
+  bokstavIndeks = 0;
   textArea.value = null;
   sitat_div.innerText = '';
   fyllSitat();
