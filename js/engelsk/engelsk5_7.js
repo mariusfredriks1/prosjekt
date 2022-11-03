@@ -1,83 +1,132 @@
-let bokstavRandom;
+let sitat_array = [
+  'the car is blue',
+  'the train was late',
+  'winter is coming',
+  'she has brown hair',
+  'the cat is white',
+  'she opened the door',
+  'i bought a new pc',
+  'we played fotball',
+  'they ran in the forest',
+  'i watched a movie',
+  'do you like apples',
+  'i love you',
+  'see you tomorrow',
+  'learning is fun',
+  'brede is super handsome'
+];
+//Globale variabler
+let sitatRandom;
+let id_Arr_Splitted;
+
+//Globale verdier for resultater
+let bokstaverSkrevet = 0;
+let feilTrykk = 0;
+let noyaktighet = 100;
+let wpm = 0;
 
 let genererSitat = () => {
   let randomTall = Math.floor(Math.random() * sitat_array.length);
-  bokstavRandom = sitat_array[randomTall];
+  sitatRandom = sitat_array[randomTall];
   sitat_array.splice(randomTall, 1);
+
+  let sitat_splitted = sitatRandom.split('');
+  let id_Arr = [];
+
+  let zip = (sitat_splitted, id_Arr) =>
+    sitat_splitted.map((x, i) => [x, id_Arr[i]]);
+
+  for (let i = 0; i < sitat_splitted.length; i++) {
+    let id = i;
+    id_Arr.push(id);
+  }
+
+  id_Arr_Splitted = zip(sitat_splitted, id_Arr);
 };
 
 let sitat_div = document.getElementById('sitatet');
 
-let fyllBokstav = () => {
+let fyllSitat = () => {
   genererSitat();
-  sitat_div.innerText += bokstavRandom;
-};
-let modalFerdig = () => {
-  modal.style.display = 'block';
-  resultat.innerText = `Bra jobba! Du skrev inn alle bokstavene i alfabetet på  ${
-    60 - tidsgrense
-  } sekunder ; )`;
+
+  for (let i = 0; i < id_Arr_Splitted.length; i++) {
+    let new_span = document.createElement('span');
+    new_span.setAttribute('id', id_Arr_Splitted[i][1]);
+    new_span.innerText = `${id_Arr_Splitted[i][0]}`;
+    sitat_div.appendChild(new_span);
+  }
 };
 
-let tomForTidModal = () => {
-  modal.style.display = 'block';
-  resultat.innerText = `Tiden er ute, du klarte ${poeng} bokstaver på 60 sekunder!`;
-};
-
-//Bruker en boolean til å passe på at startTimer kjører kun en gang, og ikke starter på nytt for hvert input
 let started = false;
-//Definerer tidsgrense
-let tidsgrense = 60;
-let nedtelling;
-//Starte nedtelling
+
 let startTimer = () => {
   if (!started) {
-    nedtelling = setInterval(() => {
+    let tidsgrense = 10;
+    let nedtelling = setInterval(() => {
       tidsgrense--;
+      document.getElementById('timer').textContent = tidsgrense;
       if (tidsgrense === 0) {
-        tomForTidModal();
+        textArea.disabled = true;
+        visModal();
         clearInterval(nedtelling);
       }
-
-      document.getElementById('timer').textContent = tidsgrense;
     }, 1000);
   }
-  //Endrer boolean fra false til true, dermed kjører funksjonen kun en gang
   started = true;
 };
 
-//Lager en variabel for textarea/inputfeltet
-//Variabler for poeng
+let input = document.getElementById('textArea');
+
 let poeng = 0;
 let poengTekst = document.getElementById('poengTekst');
 poengTekst.innerText = poeng;
 
-let bokstav = document.getElementById('textArea');
-
 let sjekkSvar = () => {
-  //Sjekke om input er riktig,
-  //i så fall hente ut ny bokstav fra array
-  if (bokstav.value !== bokstavRandom) {
-    bokstav.classList.add('feil');
-    bokstav.classList.remove('riktig');
-  } else if (sitat_array.length === 0) {
-    //Stopper nedtellingen, forhindrer at tidsgrense når 0
-    //og dermed kjører tomForTidModal() funksjonen når den ikke skal kjøres
-    clearInterval(nedtelling);
-    poeng++;
-    modalFerdig();
-  } else {
-    bokstav.classList.remove('feil');
-    bokstav.classList.add('riktig');
+  bokstaverSkrevet++;
+
+  if (input.value === sitatRandom) {
     poeng++;
     document.getElementById('poengTekst').innerText = poeng;
-    nyBokstav();
+    nyttSitat();
   }
+
+  let input_splitted = input.value.split('');
+
+  for (let i = 0; i < input_splitted.length + 1; i++) {
+    if (i >= id_Arr_Splitted.length) nyttSitat();
+
+    let bokstav = document.getElementById(id_Arr_Splitted[i][1]);
+
+    if (input_splitted[i] == null) {
+      bokstav.classList.remove('riktig');
+      bokstav.classList.remove('feil');
+    } else if (input_splitted[i] === id_Arr_Splitted[i][0]) {
+      bokstav.classList.add('riktig');
+    } else {
+      bokstav.classList.add('feil');
+      feilTrykk++;
+    }
+  }
+  noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
+
+  console.log('Feil', feilTrykk);
+  console.log('Nøyaktighet', noyaktighet);
+  wpm = Math.round(bokstaverSkrevet / 4.7);
 };
 
-//Henter nytt sitat til brukeren
-let nyBokstav = () => {
+let nyttSitat = () => {
   textArea.value = null;
   sitat_div.innerText = '';
-  fyllBokstav();
+  fyllSitat();
 };
+
+let fjernVelkomstModal = () => {
+  velkommenModal.style.display = 'none';
+  textArea.focus();
+  sessionStorage.setItem('viseVelkomstModal', 'false');
+};
+
+if (sessionStorage.getItem('viseVelkomstModal') == 'false') {
+  velkommenModal.style.display = 'none';
+  textArea.focus();
+}

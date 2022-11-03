@@ -3,9 +3,16 @@ let sitatRandom;
 //Må også være global så den oppdateres hver gang fyllSitat() kjører
 let id_Arr_Splitted;
 
+//Globale verdier for resultater
+let bokstaverSkrevet = 0;
+let feilTrykk = 0;
+//Noyaktighet settes til 100, ettersom brukeren jo starter med 100% nøyaktighet
+let noyaktighet = 100;
+let wpm = 0;
+
 /*Funksjonen generersitat henter ut et tilfeldig sitat fra sitat_array.
  Variablen sitatRandom er en global variabel slik at
- Den henter ut ett ubrukt sitat hver gang.
+ Den henter ut et ubrukt sitat hver gang.
  Bruker også splice her slik at sitatet forsvinner
  Ut av arrayen, og dermed ikke kommer fler ganger */
 let genererSitat = () => {
@@ -32,22 +39,22 @@ let genererSitat = () => {
   
   Det tilfeldige sitatet her var "Eplet faller ikke langt fra stammen"
 
-            0 //Dette er en array med index 0 i den nye arrayen
+            0            <<<-----------------  Dette er en array med index 0 i den nye arrayen
             : 
             (2) ['e', undefined]      <<<----- to elementer i arrayen, 'e' og undefined 
 
 
-            1 //Dette er en array med index 1 i den nye arrayen
+            1            <<<-----------------  Dette er en array med index 1 i den nye arrayen
             : 
             (2) ['p', undefined]      <<<----- to elementer i arrayen, 'p' og undefined 
 
 
-            2 //Dette er en array med index 2 i den nye arrayen
+            2            <<<-----------------  Dette er en array med index 2 i den nye arrayen
             : 
             (2) ['l', undefined]      <<<----- to elementer i arrayen, 'l' og undefined 
 
 
-            3 //Dette er en array med index 3 i den nye arrayen
+            3            <<<-----------------  Dette er en array med index 3 i den nye arrayen
             : 
             (2) ['e', undefined]      <<<----- to elementer i arrayen, 'e' og undefined 
 
@@ -70,27 +77,27 @@ let genererSitat = () => {
     let id = i;
     id_Arr.push(id);
   }
-  /*Hvis man kjører samme console log her vil resultatet bli:
+  /*Hvis man kjører samme console log her vil resultatet bli følgende:
 
       console log(sitat_splitted.map((x, i) => [x, id_Arr[i]])); 
   
 
-            0 //Dette er en array med index 0 i den nye arrayen
+            0    <<<-----------------  Dette er en array med index 0 i den nye arrayen
             : 
             (2) ['e', 0]      <<<----- to elementer i arrayen, 'e' og 0 
 
 
-            1 //Dette er en array med index 1 i den nye arrayen
+            1    <<<-----------------  Dette er en array med index 1 i den nye arrayen
             : 
             (2) ['p', 1]      <<<----- to elementer i arrayen, 'p' og 1 
 
 
-            2 //Dette er en array med index 2 i den nye arrayen
+            2    <<<-----------------  Dette er en array med index 2 i den nye arrayen
             : 
             (2) ['l', 2]      <<<----- to elementer i arrayen, 'l' og 2 
 
 
-            3 //Dette er en array med index 3 i den nye arrayen
+            3    <<<-----------------  Dette er en array med index 3 i den nye arrayen
             : 
             (2) ['e', 3]      <<<----- to elementer i arrayen, 'e' og 3 
   
@@ -101,15 +108,11 @@ let genererSitat = () => {
 
   */
 
-  /*Setter zip, som er det vi har jobbet siden linje 26,  lik den globale 
+  /*Setter zip, som er det vi har jobbet med siden linje 33,  lik den globale 
    variabelen vi definerte helt på starten.(id_Arr_Splitted), slik at andre
    funksjoner har tilgang til funksjonen. Dette må man gjøre ettersom zip 
    ligger lokalt inni genererSitat funksjonen  */
   id_Arr_Splitted = zip(sitat_splitted, id_Arr);
-
-  console.log('sitat_splitted', sitat_splitted);
-  console.log('id_Arr', id_Arr);
-  console.log('id_Arr_Splitted', id_Arr_Splitted);
 };
 
 /*Definerer variablen som kobles til div'en der sitatet vil komme opp */
@@ -146,7 +149,7 @@ let fyllSitat = () => {
     bruke appendChild. Altså legger du hvert span inn i sitat_div, som du jo selvfølgelig
     husker er den div'en sitatet vises frem i.
 
-                    0 //Dette er en array med index 0 i den nye arrayen
+                         0    <<<--------------------------  Dette er en array med index 0 i den nye arrayen
                                 : 
                                 (2) [ 'e', 0 ]      <<<----- To elementer i arrayen, 'e' og 0 
                                        |   |
@@ -206,6 +209,8 @@ let riktigeTrykk = 0; */
 sjekker om det brukeren har skrevet inn er riktig bokstav, mellomrom
 eller tegn.*/
 let sjekkSvar = () => {
+  //Incrementer antall tegn brukeren har skrevet inn
+  bokstaverSkrevet++;
   /*Denne if-setningen sjekkes i starten av funksjonen, og sjekker om
   brukeren har klart å skrive inn hele sitatet riktig. Hvis alt er riktig
   vil brukeren få et poeng, og funksjonen nyttSitat vil kjøres. Deretter
@@ -265,6 +270,15 @@ let sjekkSvar = () => {
     }
   }
 };
+/* Noyaktighet regner ut andelen riktige input fra brukeren i prosent, og runder av 
+til nærmeste heltall */
+noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
+
+console.log('Feil', feilTrykk);
+console.log('Nøyaktighet', noyaktighet);
+/* Wpm regner ut ord i minuttet, og runder av til nærmeste heltall. Regnestykket er
+ basert på at et gjennomstillig ord har 4,7 bokstaver */
+wpm = Math.round(bokstaverSkrevet / 4.7);
 
 /*nyttSitat henter ut et nytt, ubrukt sitat. Funksjonen kalles inni funskjonen fyllSitat.
   nyttSitat tømmer inputfeltet og sitat_div for innhold, før den kaller fyllSitat,
@@ -274,3 +288,20 @@ let nyttSitat = () => {
   sitat_div.innerText = '';
   fyllSitat();
 };
+
+/* Funkjsonen som fjerer velkomst-modalen. Samtidig autofokuserer siden på inputområdet,
+ slik at brukeren kan begynne å skrive med en gang. I tillegg setter den verdien til 
+ variablen viseVelkomstModal til false.   */
+let fjernVelkomstModal = () => {
+  velkommenModal.style.display = 'none';
+  textArea.focus();
+  sessionStorage.setItem('viseVelkomstModal', 'false');
+};
+
+/* Denne if setningen sjekker verdien til viseVelkomstmodal, og beslutter deretter om 
+velkomstmodalen skal vises for brukeren. Sessionstorage lagrer verdien til denne variablen 
+helt til nettleseren avslutter økten. På denne måten vil ikke brukeren få opp velkomstmodalen mer enn èn gang per besøk! */
+if (sessionStorage.getItem('viseVelkomstModal') == 'false') {
+  velkommenModal.style.display = 'none';
+  textArea.focus();
+}
