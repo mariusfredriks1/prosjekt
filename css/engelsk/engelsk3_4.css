@@ -2,8 +2,19 @@ body {
   background-color: #AEE4AD !important;
   overflow-y: scroll; }
 
-h2,p {
-  text-align: center;}
+#overskrift{
+    font-size: 3rem;
+    font-weight: bold;
+     color: #6563DC;
+    text-align: center;
+}
+#underOverskrift{
+    font-size: 1.5rem;
+    font-weight: bold;
+     color: #6563DC;
+     text-align: center;
+     margin-bottom: 20px;
+}
 
 .flexbox{
   display: flex;} 
@@ -19,6 +30,17 @@ h2,p {
     width: 100px;
     height: 35px;
     border: 3px solid black;
+    border-radius: 5px;
+    
+  }
+
+
+  .pVenstre{
+    text-align: center;
+    margin-top: 2px;
+  }
+  p{
+    margin-top: 8px;
   }
 
 

@@ -3,10 +3,10 @@
   <head>
     <meta charset="utf-8" />
     <title>Engelsk for 1. og 2. trinn</title>
-    <link rel="stylesheet" href="/css/hovedStil.css" />
+    <link rel="stylesheet" href="../../css/hovedStil.css" />
 
-    <link rel="stylesheet" href="/css/engelsk/engelsk3_4.css" />
-    <script src="/js/engelsk/engelsk3_4.js" defer></script>
+    <link rel="stylesheet" href="../../css/engelsk/engelsk3_4.css" />
+    <script src="../../js/engelsk/engelsk3_4.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -15,9 +15,9 @@
   </head>
   <body>
     <div class="topnav" id="myTopnav">
-      <a href="/html/navigasjon/hjem.html">Hjem</a>
-      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
-      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="../../html/navigasjon/hjem.html">Hjem</a>
+      <a href="../../html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="../../html/navigasjon/omTeamet.html">Om teamet</a>
       <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
@@ -33,87 +33,50 @@
         }
       };
     </script>
+    <img
+      id="tilbakePil"
+      src="../../bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='../../html/navigasjon/3_4.html'"
+    />
 
-    <h2>Dra og slipp</h2>
-    <p>Dra ordet fra venstre til riktig oversetting på høyre</p>
+    <h2 id="overskrift">Dra og slipp</h2>
+    <h4 id="underOverskrift">
+      Dra ordet fra venstre til riktig oversetting på høyre
+    </h4>
 
     <div class="flexbox">
-      
-      <div class = "leftColumn">
-            <div id="div1"
-              draggable="true"
-              ondragstart="drag(event)">
-              Gutt
-            </div>
-        <br><br><br>
-          <div
-              draggable="true"
-              ondragstart="drag(event)"
-              id="div2">
-              Jente 
-            </div>
-        <br><br><br>
-            <div id="div3"
-              draggable="true"
-              ondragstart="drag(event)">
-              Cars 
-            </div> 
-        <br><br><br>
-            <div id="div4"
-              draggable="true"
-              ondragstart="drag(event)">         
-              Gutter 
-            </div>
-        <br><br><br>
-          <div id="div5"
-            draggable="true"
-            ondragstart="drag(event)">
-            Lærer </div>
+      <div class="leftColumn">
+        <div id="div1" draggable="true" ondragstart="drag(event)"><p class="pVenstre">Gutt</p></div>
+        <br /><br />
+        <div draggable="true" ondragstart="drag(event)" id="div2"><p class="pVenstre">Jente</p></div>
+        <br /><br />
+        <div id="div3" draggable="true" ondragstart="drag(event)"><p class="pVenstre">Cars</p></div>
+        <br /><br />
+        <div id="div4" draggable="true" ondragstart="drag(event)"><p class="pVenstre">Gutter</p></div>
+        <br /><br />
+        <div id="div5" draggable="true" ondragstart="drag(event)"><p class="pVenstre">Lærer</p></div>
       </div>
-      
 
-        <div class = "rightColumn">
-              <div id="div2" 
-              ondrop="drop(event)" 
-              ondragover="allowDrop(event)">
-              </div>
-              <div id="girl">
-                Girl</div>
+      <div class="rightColumn">
+        <div id="div2" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
+        <div id="girl"><p>Girl</p></div>
 
-          <br><br>
-              <div id="div1" 
-              ondrop="drop(event)" 
-              ondragover="allowDrop(event)">
-              </div>
+        <div id="div1" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-              <div id="boy">
-                Boy</div>
-          <br/><br/>
-                <div id="div4"    
-                ondrop="drop(event)" 
-                ondragover="allowDrop(event)"></div>
+        <div id="boy"><p>Boy</p></div>
+        <div id="div4" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-                      <div id="tekst">
-                      Boys</div>
-          <br><br>
-              <div id="div3" 
-              ondrop="drop(event)" 
-              ondragover="allowDrop(event)"></div>
+        <div id="tekst"><p>Boys</p></div>
+        <div id="div3" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-              <div id="girl">
-                Biler</div>
+        <div id="girl"><p>Biler</p></div>
 
-          <br><br>
-              <div id="div5" 
-              ondrop="drop(event)" 
-              ondragover="allowDrop(event)"></div>
+        <div id="div5" ondrop="drop(event)" ondragover="allowDrop(event)"></div>
 
-              <div id="">Teacher</div>
-
-        </div>
+        <div id=""><p>Teacher</p></div>
+      </div>
     </div>
-
- 
 
     <script>
       // godtar at man dropper div
@@ -129,22 +92,19 @@
         ev.preventDefault();
         var data = ev.dataTransfer.getData('text');
         if (data == ev.target.id)
-            ev.target.appendChild(document.getElementById(data));
-         
-      } 
+          ev.target.appendChild(document.getElementById(data));
+      }
 
-      let riktig = ""
+      let riktig = '';
 
       function counter() {
         if (drop(ev)) {
-          document.createElement("p")
-          riktig = +1
-          }
-          p.textContent = riktig;
-          appendChild(p)
+          document.createElement('p');
+          riktig = +1;
         }
-      
-      
+        p.textContent = riktig;
+        appendChild(p);
+      }
     </script>
   </body>
 </html>

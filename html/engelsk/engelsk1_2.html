@@ -3,10 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Engelsk for 1. og 2. trinn</title>
-    <link 
-      rel="stylesheet" href="/css/hovedStil.css"/>
-      <link rel="stylesheet" href="/css/engelsk/engelsk1_2.css" />
-    <script src="/js/engelsk/engelsk1_2.js" defer></script>
+    <link rel="stylesheet" href="../../css/hovedStil.css" />
+    <link rel="stylesheet" href="../../css/engelsk/engelsk1_2.css" />
+    <script src="../../js/engelsk/engelsk1_2.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -16,9 +15,9 @@
 
   <body onload="bakgrunnOnload()">
     <div class="topnav" id="myTopnav">
-      <a href="/html/navigasjon/hjem.html">Hjem</a>
-      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
-      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="../../html/navigasjon/hjem.html">Hjem</a>
+      <a href="../../html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="../../html/navigasjon/omTeamet.html">Om teamet</a>
       <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
@@ -34,19 +33,25 @@
         }
       };
     </script>
+    <img
+      id="tilbakePil"
+      src="../../bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='../../html/navigasjon/1_2.html'"
+    />
 
     <div class="text-center">
-      <h2>Trykk på rett farge</h2>
-      <p>for ny farge trykk "reset"-knappen</p>
+      <h2 id="overskrift" >What color is this?</h2>
+      <h4 id="underOverskrift" >For new color, press "RESET"</h4>
       <button onclick="velgTilfeldigFarge()" id="startKnapp">RESET</button>
     </div>
 
     <div id="colorBoard"></div>
 
     <div id="knappDiv" class="text-center">
-      <button class="btn btn-secondary btn-rounded" id="knapp1">Test</button>
-      <button class="btn btn-secondary btn-rounded" id="knapp2">Test</button>
-      <button class="btn btn-secondary btn-rounded" id="knapp3">Test</button>
+      <button class="fargeAlt" id="knapp1">Test</button>
+      <button class="fargeAlt" id="knapp2">Test</button>
+      <button class="fargeAlt" id="knapp3">Test</button>
     </div>
   </body>
 </html>

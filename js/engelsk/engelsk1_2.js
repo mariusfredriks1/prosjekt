@@ -4,7 +4,7 @@ const fargeArray = [
   'Green',
   'Yellow',
   'Purple',
-  'Rosa',
+  'Pink',
   'Orange',
   'Brown',
   'White',

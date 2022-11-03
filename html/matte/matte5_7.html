@@ -4,9 +4,9 @@
     <title>Mattegøy for 5. til 7. trinn</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <link rel="stylesheet" href="/css/hovedStil.css" />
-    <link rel="stylesheet" href="/css/matte/matte3_4.css " />
-    <script src="/js/matte/matte5_7.js" defer></script>
+    <link rel="stylesheet" href="../../css/hovedStil.css" />
+    <link rel="stylesheet" href="../../css/matte/matte3_4.css " />
+    <script src="../../js/matte/matte5_7.js" defer></script>
     <link
       rel="stylesheet"
       href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
@@ -17,9 +17,9 @@
 
   <body onload="tekstgange()">
     <div class="topnav" id="myTopnav">
-      <a href="/html/navigasjon/hjem.html">Hjem</a>
-      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
-      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="../../html/navigasjon/hjem.html">Hjem</a>
+      <a href="../../html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="../../html/navigasjon/omTeamet.html">Om teamet</a>
       <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
@@ -35,29 +35,29 @@
         }
       };
     </script>
-    <div class="flex-container" href="#">
-      <div
-        class="flex-childfrukt1"
-        id="flex-childfrukt1"
-        href="#"
-        onload="random()"
-        alt="frukt"
-      ></div>
-      <div class="flex-childplus" href="#">x</div>
-      <div class="flex-childfrukt2" id="flex-childfrukt2" href="#"></div>
-      <div class="flex-childequals" href="#">=</div>
+    <img
+      id="tilbakePil"
+      src="../../bilder/navigasjon/pil.jpg"
+      alt="tilbakepil"
+      onclick="location.href='../../html/navigasjon/5_7.html'"
+    />
+    <div class="mattestykket">
+      <div class="tall1" id="tall1" onload="random()" alt="frukt"></div>
+      <div class="pluss_tegn">x</div>
+      <div class="tall2" id="tall2"></div>
+      <div class="likhets_tegn">=</div>
     </div>
 
     <!--Grid med svaralt-->
-    <div class="flex-containerKnapper" href="#">
-      <div class="flex-childAlt1" href="#" alt="svar1">
+    <div class="mattestykketKnapper">
+      <div class="alternativKnapper" alt="svar1">
         <button id="alt1"></button>
       </div>
-      <div class="flex-childAlt2" href="#" alt="svar2">
+      <div class="alternativKnapper" alt="svar2">
         <button id="alt2"></button>
       </div>
 
-      <!---<div class="flex-childalt3" href="#" alt="svar1"> 
+      <!---<div class="flex-childalt3"  alt="svar1"> 
         <button id="alt3"></button> </div>--->
     </div>
 
