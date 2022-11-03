@@ -70,4 +70,24 @@ let alt3 = document.getElementById("knapp3")
 
 knappeinnhold()
 
+// modal og funksjonalitet
+var modal = document.getElementById('modal');
+var span = document.getElementsByClassName('close')[0];
 
+// når man klikker på riktig får man opp modalen
+riktig.onclick = function () {
+  modal.style.display = 'block';
+};
+
+// når modalen krysses ut får man inn et nytt regnestykke
+span.onclick = function () {
+  modal.style.display = 'none';
+  location.reload();
+};
+
+window.onclick = function (event) {
+  if (event.target == modal) {
+    modal.style.display = 'none';
+    location.reload();
+  }
+};

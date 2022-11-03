@@ -3,9 +3,9 @@
   <head>
     <meta charset="utf-8" />
     <title>Oppgave 3</title>
-    <link rel="stylesheet" href="../../css/hovedStil.css" />
-    <link rel="stylesheet" href="../../css/matte/matte3_4.css " />
-    <script src="../../js/matte/matte3_4.js" defer></script>
+    <link rel="stylesheet" href="/css/hovedStil.css" />
+    <link rel="stylesheet" href="/css/matte/matte3_4.css " />
+    <script src="/js/matte/matte3_4.js" defer></script>
     <!-- <link
       rel="stylesheet"
       href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"
@@ -17,11 +17,11 @@
     <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css" />
   </head>
 
-  <body onload="tekstgange()">
+  <body >
     <div class="topnav" id="myTopnav">
-      <a href="../../html/navigasjon/hjem.html">Hjem</a>
-      <a href="../../html/navigasjon/faq.html">Ofte stilte spørsmål</a>
-      <a href="../../html/navigasjon/omTeamet.html">Om teamet</a>
+      <a href="/html/navigasjon/hjem.html">Hjem</a>
+      <a href="/html/navigasjon/faq.html">Ofte stilte spørsmål</a>
+      <a href="/html/navigasjon/omTeamet.html">Om teamet</a>
       <a href="javascript:void(0);" class="icon" onclick="navbarResponsiv()">
         <i class="fa fa-bars"></i>
       </a>
@@ -38,46 +38,51 @@
       };
     </script>
 
-    <img
+      <img
       id="tilbakePil"
       src="../../bilder/navigasjon/pil.jpg"
       alt="tilbakepil"
       onclick="location.href='../../html/navigasjon/3_4.html'"
-    />
+      />
 
-    <!--Arrays som skal legges sammen, og man får tre alternativer der en skal være riktig
+       <!--Arrays som skal legges sammen, og man får tre alternativer der en skal være riktig
     to divs som er 40% hver med pluss tegn i mellom-->
+    
+    <div class="mattestykket" >
+      <div class="tall1" id ="tall1"  ></div>
+      
+      <div class="pluss_tegn" > X </div> 
+            
+      <div class="tall2" id ="tall2" ></div>
+      
+      <div class="likhets_tegn" > = </div>
+   </div>
 
-    <div class="mattestykket">
-      <div class="tall1" id="tall1" onload="random2()">
+      <!--Grid med svaralt-->
+    <div class="mattestykketKnapper" >
+      
+      <div class="alternativKnapper"  alt="svar1"> 
+        <button id="alt1"> </button>
       </div>
-
-      <div class="pluss_tegn">X</div>
-
-      <div class="tall2" id="tall2" onload="random2()">
+      
+      <div class="alternativKnapper"  alt="svar2" >
+        <button id="alt2"> </button>
       </div>
-
-      <div class="likhets_tegn">=</div>
+      
     </div>
 
-    <!--Grid med svaralt-->
-    <div class="mattestykketKnapper">
-      <div class="alternativKnapper" alt="svar1">
-        <button id="alt1"></button>
-      </div>
-
-      <div class="alternativKnapper" alt="svar2">
-        <button id="alt2"></button>
-      </div>
-    </div>
-
-    <!-- The Modal -->
+     
+     <!-- The Modal -->
     <div id="modal" class="modal">
-      <!-- Modal content -->
-      <div class="modal-content">
-        <span class="close">&times;</span>
-        <p>Helt riktig! Trykk hvor som helst for å fortsette</p>
-      </div>
+
+    <!-- Modal content -->
+    <div class="modal-content">
+      <span class="close">&times;</span>
+      <p>Helt riktig! Trykk "X" for å gå videre</p>
+      
     </div>
-  </body>
+
+  </div>
+
+</body>
 </html>

@@ -4,11 +4,7 @@
 let poeng = [];
 sum = 0;
 
-/*  // intern update
-  function update() {
-    $( ".mattestykket").load(window.location.href + " .mattestykket")
-    $( ".mattestykketKnapper").load(window.location.href + " .mattestykketKnapper")
-  } */
+
 
 let verdier = [];
 
@@ -33,7 +29,7 @@ function tekstgange() {
   let alt1 = document.getElementById('alt1');
   let alt2 = document.getElementById('alt2');
 
-  if (Math.random() < 0.2) {
+  if (feilsvar < randomTall1*randomTall2) {
     riktig = alt1;
     alt1.innerHTML = randomTall1 * randomTall2;
     alt2.innerHTML = randomTall1 * feilsvar;

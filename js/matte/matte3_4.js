@@ -1,20 +1,3 @@
-//riktig funksjon
-//let riktig = document.getElementById("alt1")
-
-let poeng = [];
-sum = 0;
-
-/* riktig.onclick = () => {
-        //document.createElement("div")
-        poengpush([1]);
-        sum = poeng.length;
-        console.log(sum);
-}{
-        random()
-    }  */
-
-// let feil =
-
 //verdi til bildene som lastes inn
 
 let verdier = [1, 2, 3, 4, 5];
@@ -25,16 +8,17 @@ let feilsvar = randomTall1 + 3;
 //samme verdi på svaralternativer
 
 let alternativ1 = document.getElementById('tall1');
-let alternativ2 = document.getElementById('tall2');
+let alternativ2 = document.getElementById("tall2");
 
 alternativ1.innerHTML = randomTall1;
 alternativ2.innerHTML = randomTall2;
+
 
 function tekstgange() {
   let alt1 = document.getElementById('alt1');
   let alt2 = document.getElementById('alt2');
 
-  if (Math.random() < 0.2) {
+  if (feilsvar === randomTall1*randomTall2) {
     riktig = alt1;
     alt1.innerHTML = randomTall1 * randomTall2;
     alt2.innerHTML = randomTall1 * feilsvar;
