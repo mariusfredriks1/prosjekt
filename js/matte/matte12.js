@@ -1,19 +1,8 @@
 //riktig funksjon
-let riktig = document.getElementById("alt1")
+//let riktig = document.getElementById("alt1")
 
 let poeng = [];
 sum = 0
-
-/* riktig.onclick = () => {
-        //document.createElement("div")
-        poengpush([1]);
-        sum = poeng.length;
-        console.log(sum);
-}{
-        random()
-    }  */
-
-  // let feil =
 
 
 //verdi til bildene som lastes inn
@@ -23,50 +12,60 @@ let randomTall1 = verdier[Math.floor(Math.random() * verdier.length)];
 let randomTall2 = verdier[Math.floor(Math.random() * verdier.length)];
 let feilsvar = randomTall1*2;
 
-let bilder = ["https://iform.no/wp-content/uploads/2017/03/shutterstock_16755115.jpg"]
-let randombilde = bilder[Math.floor(Math.random() * bilder.lenght)]
-/* // bilder inn i array
-img = Array(2)
-img[0] = new Image
-img[0].src="./img/matte1_2/tobananer.png"
-img[1] = new Image
-img[1].src='/img/matte1_2/matte1.JPG'
-
-let randombilde = img[Math.floor(math.random() * img.length)]; */
-
-
+// bilder
 let alternativ1 = document.getElementById("flex-childfrukt1")
+let alter1 = document.getElementById("sprml1");
 let alternativ2 = document.getElementById("flex-childfrukt2")
+alternativ1.innerHTML = randomTall1;
+alternativ2.innerHTML = randomTall2;
 
-function random() {
-    alternativ1.innerHTML = randombilde;
+function random2() {
+
+ /*  let alter1 = document.getElementById("bildenr1");
+  let alter2 = document.getElementById("bildenr2");
+ 
+    alternativ1.innerHTML = randomTall1;
     alternativ2.innerHTML = randomTall2;
-    
-} console.log(random())
 
+    alter1.src = "/bilder/matte/"+randomTall1+"bilde.png"
+    alter2.src = "/bilder/matte/"+randomTall2+"bilde.png"
+*/    
+}
+
+random2()
+ 
 
 // knapper
-// let alt1 = document.getElementById("alt1")
-
 
 function tekst() {
-    document.getElementById("alt1").innerText =  randomTall1 + randomTall2;
-    document.getElementById("alt2").innerText =  randomTall1 + feilsvar;
+  
+   let alt1 = document.getElementById("alt1")
+   let alt2 = document.getElementById("alt2")
+ if (Math.random() < 0.5) {
+  riktig = alt1
+  alt1.innerHTML = randomTall1 + randomTall2
+  alt2.innerHTML = randomTall1 + feilsvar
+ } else {
+  riktig = alt2
+  alt2.innerHTML = randomTall1 + randomTall2
+  alt1.innerHTML = randomTall1 + feilsvar
  }
 
+}
 
-// Get the modal
+tekst()
+
+
+// modal og funksjonalitet
 var modal = document.getElementById("modal");
 var span = document.getElementsByClassName("close")[0];
 
-// When the user clicks the button, open the modal 
+// når man klikker på riktig får man opp modalen
 riktig.onclick = function() {
   modal.style.display = "block";
-  }
-    //random(). window.reload
+}
 
-
-// When the user clicks on <span> (x), close the modal
+// når modalen krysses ut får man inn et nytt regnestykke
 span.onclick = function() {
   modal.style.display = "none";
   location.reload()

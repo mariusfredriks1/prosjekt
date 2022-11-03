@@ -1,21 +1,25 @@
 body {
   background-color: #AEE4AD !important;
-}
+  overflow-y: scroll; }
 
+h2,p {
+  text-align: center;}
 
-#div1, #div2 {
-    float: left;
+.flexbox{
+  display: flex;} 
+
+.rightColumn {
+  flex: 1; }
+
+.leftColumn {
+  flex: 1;
+  margin-left: 30%; }
+
+#div1, #div2, #div3, #div4, #div5 {
     width: 100px;
     height: 35px;
-    margin: 10px;
-    padding: 10px;
-    border: 1px solid black;
+    border: 3px solid black;
   }
 
-  #boy, #girl {
-    float: left;
-    width: 100px;
-    height: 35px;
-    margin: 10px;
-    padding: 10px;
-  }
+
+  

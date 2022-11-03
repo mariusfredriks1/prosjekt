@@ -6,7 +6,7 @@ body {
 .flex-container {
     display: flex;
     margin-right: 30px;
-    padding: 20px;
+    
     height: 450px
     
     
@@ -14,15 +14,18 @@ body {
 }.flex-childfrukt1 {
     flex: 1;
     text-align: center;
+    font-size: 8em;
+    
     padding: 20%;
     height: 100px;
     width: 100px;
+    
     
 }
 
 .flex-childplus { 
     position: relative;
-    margin-top: 20%;
+    margin-top: 25%;
     font-size: 5em;
 }
 
@@ -32,12 +35,14 @@ body {
     padding: 20%;
     height: 100px;
     width: 100px;
+    font-size: 8em;
+
     
 }
 
 .flex-childequals { 
     position: relative;
-    margin-top: 20%;
+    margin-top: 25%;
     font-size: 5em;
 }
 
@@ -56,6 +61,7 @@ body {
     height: 50px;
     width: 30%;
     
+    
 }
 
 
@@ -67,7 +73,7 @@ body {
         text-align: center;
         text-decoration: none;
         display: inline-block;
-        font-size: 16px;
+        font-size: 2em;
       }
 
 /* riktig onclick */

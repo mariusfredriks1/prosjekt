@@ -1,15 +1,14 @@
 const fargeArray = [
-  'blå',
-  'rød',
-  'grønn',
-  'gul',
-  'lilla',
-  'rosa',
-  'oransje',
-  'brun',
-  'hvit',
-  'sort',
-  'grå',
+  'Blue',
+  'Red',
+  'Green',
+  'Yellow',
+  'Purple',
+  'Rosa',
+  'Orange',
+  'Brown',
+  'White',
+  'Black',
 ];
 
 const hexArray = [
@@ -23,26 +22,52 @@ const hexArray = [
   '#8B4513',
   '#FFFFFF',
   '#000000',
-  '##808080',
 ];
 
-let tilfeldigFarge = hexArray[Math.floor(Math.random() * hexArray.length)];
-let randomtekst = fargeArray[Math.floor(Math.random() * hexArray.length)];
-// tilfeldig bakgrunn
+let randomindex = Math.floor(Math.random() * hexArray.length)
 
+//hente samme index i farge som i hex
+let tilfeldigFarge = hexArray[randomindex];
+let randomtekst = fargeArray[randomindex];
+
+let feilRandom = Math.floor(Math.random() * hexArray.length - 1)
+let feilfarge = fargeArray[feilRandom];
+
+let feilRandom2 = Math.floor(Math.random() * hexArray.length)
+let feilfarge2 = fargeArray[feilRandom2];
+
+
+// reset knapp
 function velgTilfeldigFarge() {
   location.reload()
 }
 
-// knappeinnhold
 function bakgrunnOnload() {
   colorBoard.style.backgroundColor = tilfeldigFarge;
-} //hente samme index i farge som i hex
+} 
 
-// tilfeldig knappeinnhold
-function tekst() {
-  document.getElementById("knapp2").innerText =  randomtekst;
+
+
+function knappeinnhold() {
+let alt1 = document.getElementById("knapp1")
+let alt2 = document.getElementById("knapp2")
+let alt3 = document.getElementById("knapp3")
+
+  if (Math.random() < 0.7) {
+  riktig = alt1
+  alt1.innerHTML = randomtekst;
+  alt2.innerHTML = feilfarge2;
+  alt3.innerHTML = feilfarge;
+
+  } else {
+  riktig = alt3
+  alt2.innerHTML = feilfarge2;
+  alt1.innerHTML = feilfarge;
+  alt3.innerHTML = randomtekst;
   
+ }
 }
+
+knappeinnhold()
 
 

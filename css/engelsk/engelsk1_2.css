@@ -3,7 +3,8 @@ body {
 }
 
 .text-center{
-    padding-bottom: 25px;;
+    padding-bottom: 25px;
+    margin-left: 25%;
 }
 
 #colorBoard {
@@ -11,7 +12,7 @@ body {
     height: 300px; 
     
     border-style: solid; 
-    border-width: 1;
+    border-width: 3px;
 
     margin-left: 25%; 
     margin-bottom: 25px;
