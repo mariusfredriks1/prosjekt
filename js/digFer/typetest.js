@@ -44,7 +44,7 @@ let started = false;
 
 let startTimer = () => {
   if (!started) {
-    let tidsgrense = 10;
+    let tidsgrense = 60;
     let nedtelling = setInterval(() => {
       tidsgrense--;
       document.getElementById('timer').textContent = tidsgrense;
