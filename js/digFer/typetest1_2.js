@@ -88,23 +88,22 @@ poengTekst.innerText = poeng;
 let bokstav = document.getElementById('textArea');
 
 let sjekkSvar = () => {
-  //Sjekke om input er riktig,
-  //i så fall hente ut ny bokstav fra array
-  if (bokstav.value !== bokstavRandom) {
-    bokstav.classList.add('feil');
-    bokstav.classList.remove('riktig');
-  } else if (bokstav_array.length === 0) {
+  //Sjekke om input er riktig, i så fall hente ut ny bokstav fra array
+  if (bokstav_array.length === 0) {
     //Stopper nedtellingen, forhindrer at tidsgrense når 0
     //og dermed kjører tomForTidModal() funksjonen når den ikke skal kjøres
     clearInterval(nedtelling);
     poeng++;
     modalFerdig();
-  } else {
+  } else if (bokstav.value == bokstavRandom) {
     bokstav.classList.remove('feil');
     bokstav.classList.add('riktig');
     poeng++;
     document.getElementById('poengTekst').innerText = poeng;
     nyBokstav();
+  } else {
+    bokstav.classList.add('feil');
+    bokstav.classList.remove('riktig');
   }
 };
 
@@ -114,7 +113,6 @@ let nyBokstav = () => {
   sitat_div.innerText = '';
   fyllBokstav();
 };
-
 
 let fjernVelkomstModal = () => {
   velkommenModal.style.display = 'none';

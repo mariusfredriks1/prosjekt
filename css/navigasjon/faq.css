@@ -1,23 +1,25 @@
-body,
-html {
-  overflow: visible !important;
-}
-.faqDiv{
-  margin:auto;
+.faqDiv {
+  margin: auto;
   max-width: 800px;
   border: 5px solid black;
   border-radius: 15px;
-  background-color: #AEE4AD;
-  
+  background-color: #aee4ad;
 }
-.spm{
+
+.spm {
   width: 80%;
   margin-left: 10%;
   margin-right: 10%;
 }
-h2{
-  color: #6563DC !important;
-  font-weight: 1000 !important;    
+@media screen and (max-width: 650px) {
+  .faqDiv {
+    width: 80%;
+    margin-left: 10%;
+  }
+}
+h2 {
+  color: #6563dc !important;
+  font-weight: 1000 !important;
   font-size: 35px !important;
   text-align: center;
   padding: 2rem;
@@ -25,18 +27,14 @@ h2{
 
 h4 {
   font-weight: bolder !important;
-  color: #6563DC !important;
-  margin-bottom: .1rem !important;
-
-
+  color: #6563dc !important;
+  margin-bottom: 0.1rem !important;
 }
-p{
-  margin-top: .1rem !important;
+p {
+  margin-top: 0.1rem !important;
   font-weight: 700 !important;
 }
 
-
-
-body{
+body {
   background-image: url(../../bilder/faq/faq.jpg) !important;
 }

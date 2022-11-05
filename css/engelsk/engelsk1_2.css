@@ -1,104 +1,162 @@
 body {
-    background-color: #AEE4AD !important;
+  background-color: #aee4ad !important;
+}
+@media screen and (max-width: 650px) {
+  .modal-content {
+    width: 80% !important;
+    margin-left: 10% !important;
+  }
+  #colorBoard {
+    width: 80% !important;
+    margin-left: 10% !important;
+  }
+  .knappDiv{
+    width: 80% !important;
+    margin-left: 10% !important;
+  }
+  .fargeAlt {
+    width: 80px !important;
+    height: 50px !important;
+    font-size: 1rem !important;
+
+  }
+  #resetKnapp {
+    width: 100px !important;
+    height: 50px !important;
+    font-size: 1rem !important;
+  }
+
+  #overskrift {
+    font-size: 2rem !important;
+  }
+  #underOverskrift {
+    font-size: 1rem !important;
+  }
 }
 
-.text-center{
-    text-align: center;
+.text-center {
+  text-align: center;
 }
-#overskrift{
-    font-size: 4rem;
-    font-weight: bold;
-     color: #6563DC;
+#overskrift {
+  font-size: 4rem;
+  font-weight: bold;
+  color: #6563dc;
 }
-#underOverskrift{
-    font-size: 2rem;
-    font-weight: bold;
-     color: #6563DC;
+#underOverskrift {
+  font-size: 2rem;
+  font-weight: bold;
+  color: #6563dc;
 }
-#startKnapp{
-    border: 5px solid #6563DC;
-    border-radius: 5px ;
-    background-color: white;
-    color: black;
-    font-size: 24px;
-    width: 100px;
-    height: 60px;
-    margin: 5px;
-    cursor: pointer;
-    font-size: 1.5rem;
+#resetKnapp {
+  border: 5px solid #6563dc;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  width: 100px;
+  height: 60px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
 }
 
 #colorBoard {
-    width: 600px;
-    height: 300px; 
-    border: 3px solid black;
-    border-radius: 10px;
-    margin: auto;
-    margin-bottom: 20px;
-    margin-top: 20px;
+  width: 600px;
+  height: 300px;
+  border: 5px solid black;
+  border-radius: 10px;
+  margin: auto;
+  margin-bottom: 20px;
+  margin-top: 20px;
 }
 
+.fargeAlt {
+  border: 5px solid #6563dc;
+  border-radius: 5px;
+  background-color: white;
+  color: black;
+  font-size: 24px;
+  width: 120px;
+  height: 60px;
+  margin: 5px;
+  cursor: pointer;
+  font-size: 1.5rem;
+}
 
-.fargeAlt{
-border: 5px solid #6563DC;
-border-radius: 5px ;
-background-color: white;
-color: black;
-font-size: 24px;
-width: 120px;
-height: 60px;
-margin: 5px;
-cursor: pointer;
-font-size: 1.5rem;
+.feil {
+  color: white;
+  background-color: red;
+  animation: shake 0.5s ease-out;
+}
+
+/* Use the keyframes for defining 
+ the animation */
+@keyframes shake {
+  0% {
+    transform: skewX(-5deg);
+  }
+
+  25% {
+    transform: skewX(5deg);
+  }
+
+  50% {
+    transform: skewX(-5deg);
+  }
+
+  75% {
+    transform: skewX(5deg);
+  }
+
+  100% {
+    transform: skewX(-5deg);
+  }
 }
 
 /*The Modal (background) */
 .modal {
-    top: 0%;
-    left: 0%;
-    width: 100vw;
-    height: 100vh;
-    position: absolute;
-    background: rgba(0, 0, 0, 0.5);
-    display: none; 
-    position: fixed; 
-    z-index: 1; 
-    padding-top: 100px;
-    backdrop-filter: blur(4px);
-    width: 100%; 
-    height: 100%; 
-    
-  }
-  
-  /* Modal innhold */
-  .modal-content {
-    background-color: #6563DC;
-    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
-    border: 5px ridge black;
-    border-radius: 10px;
-    text-align: center;
-    margin: auto;
-    padding: 20px;
-    width: 40%;
-  }
+  top: 0%;
+  left: 0%;
+  position: absolute;
+  background: rgba(0, 0, 0, 0.5);
+  display: none;
+  position: fixed;
+  z-index: 1;
+  padding-top: 100px;
+  backdrop-filter: blur(4px);
+  width: 100%;
+  height: 100%;
+}
 
-  .modal-content p{
-        font-size: 25px;
-        font-weight: bold;
-        padding: 10px;
-  }
-  
-  /* The Close Button */
-  .close {
-    color: #AEE4AD;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-  }
-  
-  .close:hover,
-  .close:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
-  }
+/* Modal innhold */
+.modal-content {
+  background-color: #6563dc;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
+  border: 5px ridge black;
+  border-radius: 10px;
+  text-align: center;
+  margin: auto;
+  padding: 20px;
+  width: 40%;
+}
+
+.modal-content p {
+  font-size: 25px;
+  font-weight: bold;
+  padding: 10px;
+}
+
+/* The Close Button */
+.close {
+  color: #aee4ad;
+  float: right;
+  font-size: 28px;
+  font-weight: bold;
+}
+
+.close:hover,
+.close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}

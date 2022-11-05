@@ -6,12 +6,12 @@ sum = 0;
 
 //verdi til bildene som lastes inn
 
-let verdier = [1, 2, 3, 4];
+let verdier = [1, 2, 3, 4, 5, 6];
 let randomTall1 = verdier[Math.floor(Math.random() * verdier.length)];
 let randomTall2 = verdier[Math.floor(Math.random() * verdier.length)];
 let feilsvar = randomTall1 * 2;
 
- /* // bilder
+/* // bilder
 let alternativ1 = document.getElementById('tall1');
 let alter1 = document.getElementById('sprml1');
 let alternativ2 = document.getElementById('tall2');
@@ -25,7 +25,7 @@ let alternativ2 = document.getElementById('tall2');
 alternativ1.innerHTML = randomTall1;
 alternativ2.innerHTML = randomTall2;
 
-/* function random2() {
+/* let random2 = () => {
   let alter1 = document.getElementById("bildenr1");
   let alter2 = document.getElementById("bildenr2");
  
@@ -41,20 +41,22 @@ random2();*/
 
 // knapper
 
-function tekst() {
+let tekst = () => {
   let alt1 = document.getElementById('alt1');
   let alt2 = document.getElementById('alt2');
 
   if (Math.random() < 0.5) {
     riktig = alt1;
+    feil = alt2;
     alt1.innerHTML = randomTall1 + randomTall2;
     alt2.innerHTML = randomTall1 + feilsvar;
   } else {
     riktig = alt2;
+    feil = alt1;
     alt2.innerHTML = randomTall1 + randomTall2;
     alt1.innerHTML = randomTall1 + feilsvar;
   }
-}
+};
 
 tekst();
 
@@ -63,17 +65,25 @@ var modal = document.getElementById('modal');
 var span = document.getElementsByClassName('close')[0];
 
 // når man klikker på riktig får man opp modalen
-riktig.onclick = function () {
+riktig.onclick = () => {
   modal.style.display = 'block';
 };
 
+feil.onclick = () => {
+  feil.classList.add('feil');
+
+  setTimeout(() => {
+    feil.classList.remove('feil');
+  }, 500);
+};
+
 // når modalen krysses ut får man inn et nytt regnestykke
-span.onclick = function () {
+span.onclick = () => {
   modal.style.display = 'none';
   location.reload();
 };
 
-window.onclick = function (event) {
+window.onclick = (event) => {
   if (event.target == modal) {
     modal.style.display = 'none';
     location.reload();

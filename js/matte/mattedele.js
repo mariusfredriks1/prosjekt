@@ -5,7 +5,7 @@ let poeng = [];
 sum = 0;
 
 /*  // intern update
-  function update() {
+  let update = () => {
     $( ".mattestykket").load(window.location.href + " .mattestykket")
     $( ".mattestykketKnapper").load(window.location.href + " .mattestykketKnapper")
   } */
@@ -24,7 +24,7 @@ let alternativ2 = document.getElementById('tall2');
 alternativ1.innerHTML = randomTall1;
 alternativ2.innerHTML = randomTall2;
 
-function tekstgange() {
+let tekstgange = () => {
   let alt1 = document.getElementById('alt1');
   let alt2 = document.getElementById('alt2');
 
@@ -37,7 +37,7 @@ function tekstgange() {
     alt2.innerHTML = randomTall1 / randomTall2;
     alt1.innerHTML = randomTall2;
   }
-}
+};
 
 tekstgange();
 
@@ -46,17 +46,17 @@ var modal = document.getElementById('modal');
 var span = document.getElementsByClassName('close')[0];
 
 // When the user clicks the button, open the modal
-riktig.onclick = function () {
+riktig.onclick = () => {
   modal.style.display = 'block';
 };
 
 // When the user clicks on <span> (x), close the modal
-span.onclick = function () {
+span.onclick = () => {
   modal.style.display = 'none';
   location.reload();
 };
 
-window.onclick = function (event) {
+window.onclick = (event) => {
   if (event.target == modal) {
     modal.style.display = 'none';
   }

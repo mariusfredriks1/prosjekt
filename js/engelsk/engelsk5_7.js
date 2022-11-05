@@ -13,6 +13,8 @@ let sitat_array = [
   'i love you',
   'see you tomorrow',
   'learning is fun',
+  'lea is super cute',
+  'petter is really strong',
   'brede is super handsome'
 ];
 //Globale variabler
@@ -61,7 +63,7 @@ let started = false;
 
 let startTimer = () => {
   if (!started) {
-    let tidsgrense = 10;
+    let tidsgrense = 60;
     let nedtelling = setInterval(() => {
       tidsgrense--;
       document.getElementById('timer').textContent = tidsgrense;

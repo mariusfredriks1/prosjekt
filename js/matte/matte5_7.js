@@ -4,13 +4,10 @@
 let poeng = [];
 sum = 0;
 
-
-
 let verdier = [];
 
 for (let i = 0; i <= 10; i++) {
   verdier.push(i);
-  console.log(verdier[i]);
 }
 
 let randomTall1 = verdier[Math.floor(Math.random() * verdier.length)];
@@ -25,20 +22,22 @@ let alternativ2 = document.getElementById('tall2');
 alternativ1.innerHTML = randomTall1;
 alternativ2.innerHTML = randomTall2;
 
-function tekstgange() {
+let tekstgange = () => {
   let alt1 = document.getElementById('alt1');
   let alt2 = document.getElementById('alt2');
 
-  if (feilsvar < randomTall1*randomTall2) {
+  if (feilsvar < randomTall1 * randomTall2) {
     riktig = alt1;
+    feil = alt2;
     alt1.innerHTML = randomTall1 * randomTall2;
     alt2.innerHTML = randomTall1 * feilsvar;
   } else {
     riktig = alt2;
+    feil = alt1;
     alt2.innerHTML = randomTall1 * randomTall2;
     alt1.innerHTML = randomTall1 * feilsvar;
   }
-}
+};
 
 tekstgange();
 
@@ -47,17 +46,25 @@ var modal = document.getElementById('modal');
 var span = document.getElementsByClassName('close')[0];
 
 // When the user clicks the button, open the modal
-riktig.onclick = function () {
+riktig.onclick = () => {
   modal.style.display = 'block';
 };
 
+feil.onclick = () => {
+  feil.classList.add('feil');
+
+  setTimeout(() => {
+    feil.classList.remove('feil');
+  }, 500);
+};
+
 // When the user clicks on <span> (x), close the modal
-span.onclick = function () {
+span.onclick = () => {
   modal.style.display = 'none';
   location.reload();
 };
 
-window.onclick = function (event) {
+window.onclick = (event) => {
   if (event.target == modal) {
     modal.style.display = 'none';
     location.reload();
