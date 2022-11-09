@@ -111,8 +111,7 @@ let sjekkSvar = () => {
   }
   noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
 
-  console.log('Feil', feilTrykk);
-  console.log('Nøyaktighet', noyaktighet);
+  
   wpm = Math.round(bokstaverSkrevet / 4.7);
 };
 

@@ -19,7 +19,7 @@ let genererSitat = () => {
   let randomTall = Math.floor(Math.random() * sitat_array.length);
   sitatRandom = sitat_array[randomTall];
   sitat_array.splice(randomTall, 1);
-  console.log('sitat_array', sitat_array);
+
 
   /*Her splittes sitatet opp i induviduelle bokstaver
    ved hjelp av split. I tillegg defineres en tom array
