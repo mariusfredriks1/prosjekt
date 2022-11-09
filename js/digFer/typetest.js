@@ -25,8 +25,9 @@ let genererSitat = () => {
   }
 
   id_Arr_Splitted = zip(sitat_splitted, id_Arr);
-};
+console.log(id_Arr_Splitted);
 
+};
 let sitat_div = document.getElementById('sitatet');
 
 let fyllSitat = () => {
@@ -87,9 +88,13 @@ let sjekkSvar = () => {
       bokstav.classList.add('riktig');
     } else {
       bokstav.classList.add('feil');
-      feilTrykk++;
     }
   }
+
+  if (document.querySelector('.feil'))feilTrykk++;
+  
+
+  console.log(feilTrykk);
   noyaktighet = Math.round(100 - (feilTrykk / bokstaverSkrevet) * 100);
 
   console.log('Feil', feilTrykk);

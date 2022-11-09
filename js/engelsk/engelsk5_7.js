@@ -6,7 +6,7 @@ let sitat_array = [
   'the cat is white',
   'she opened the door',
   'i bought a new pc',
-  'we played fotball',
+  'we played football',
   'they ran in the forest',
   'i watched a movie',
   'do you like apples',
